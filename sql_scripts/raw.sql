@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS raw.aankomst, raw.banen, raw.klant, raw.luchthavens, raw.ma
 
 
 CREATE TABLE raw.aankomst (
-    "Vluchtid" VARCHAR(10),         -- 6 karakters lang, gebaseerd op de langste waarde 936013
+    "Vluchtid" VARCHAR(10),        -- 6 karakters lang, gebaseerd op de langste waarde 936013
     "Vliegtuigcode" VARCHAR(8),    -- 6 karakters lang, zoals VKL859
     "Terminal" VARCHAR(1),         -- 1 karakter lang, zoals A, B, C
     "Gate" VARCHAR(2),             -- 2 karakters lang, zoals C1, A2
@@ -33,17 +33,17 @@ CREATE TABLE raw.klant (
 
 
 CREATE TABLE raw.luchthavens (
-    "Airport" VARCHAR(30),     -- Geschatte lengte voor namen zoals 'Bamyan Airport'
-    "City" VARCHAR(20),        -- Geschatte lengte voor stadsnamen zoals 'Bamyan'
-    "Country" VARCHAR(20),     -- Geschatte lengte voor landnamen zoals 'Afghanistan'
-    "IATA" VARCHAR(3),         -- 3 karakters, bijv. 'BIN'
-    "ICAO" VARCHAR(4),         -- 4 karakters, bijv. 'OABN'
-    "Lat" VARCHAR(10),         -- Lengte voor breedtegraden zoals '34.816667'
-    "Lon" VARCHAR(10),         -- Lengte voor lengtegraden zoals '67.816667'
-    "Alt" VARCHAR(4),          -- 4 karakters voor hoogte zoals '2550'
-    "TZ" VARCHAR(4),           -- 4 karakters voor tijdzone offset zoals '4.5'
-    "DST" VARCHAR(1),          -- 1 karakter voor DST, bijv. 'N'
-    "TzName" VARCHAR(20)           -- Geschatte lengte voor tijdzone namen zoals 'Asia/Kabul'
+    "Airport" VARCHAR(70),     -- Geschatte lengte voor namen zoals 'Bamyan Airport'
+    "City" VARCHAR(200),        -- Geschatte lengte voor stadsnamen zoals 'Bamyan'
+    "Country" VARCHAR(60),     -- Geschatte lengte voor landnamen zoals 'Afghanistan'
+    "IATA" VARCHAR(10),         -- 3 karakters, bijv. 'BIN'
+    "ICAO" VARCHAR(10),         -- 4 karakters, bijv. 'OABN'
+    "Lat" VARCHAR(20),         -- Lengte voor breedtegraden zoals '34.816667'
+    "Lon" VARCHAR(20),         -- Lengte voor lengtegraden zoals '67.816667'
+    "Alt" VARCHAR(10),          -- 4 karakters voor hoogte zoals '2550'
+    "TZ" VARCHAR(10),           -- 4 karakters voor tijdzone offset zoals '4.5'
+    "DST" VARCHAR(5),          -- 1 karakter voor DST, bijv. 'N'
+    "Tz" VARCHAR(50)           -- Geschatte lengte voor tijdzone namen zoals 'Asia/Kabul'
 );
 
 
@@ -54,50 +54,50 @@ CREATE TABLE raw.maatschappijen (
 );
 
 CREATE TABLE raw.planning (
-    "Vluchtnr" VARCHAR(6),      -- 6 karakters lang, genoeg voor waarden zoals '9W2888'
-    "Airlinecode" VARCHAR(2),   -- 2 karakters lang, zoals '9W'
-    "Destcode" VARCHAR(3),      -- 3 karakters, standaard IATA luchthaven codes zoals 'DEL'
-    "Planterminal" VARCHAR(1),  -- 1 karakter, zoals 'D'
-    "Plangate" VARCHAR(2),      -- 2 karakters, zoals 'D2'
-    "Plantijd" VARCHAR(8)       -- 8 karakters, ruimte voor tijden zoals '2:10 PM'
+    "Vluchtnr" VARCHAR(10),      -- 6 karakters lang, genoeg voor waarden zoals '9W2888'
+    "Airlinecode" VARCHAR(10),   -- 2 karakters lang, zoals '9W'
+    "Destcode" VARCHAR(10),      -- 3 karakters, standaard IATA luchthaven codes zoals 'DEL'
+    "Planterminal" VARCHAR(5),  -- 1 karakter, zoals 'D'
+    "Plangate" VARCHAR(5),      -- 2 karakters, zoals 'D2'
+    "Plantijd" VARCHAR(10)       -- 8 karakters, ruimte voor tijden zoals '2:10 PM'
 );
 
 CREATE TABLE raw.vertrek (
-    "Vluchtid" VARCHAR(6),       -- 6 karakters lang, gebaseerd op de langste waarde zoals '935995'
-    "Vliegtuigcode" VARCHAR(7),  -- 7 karakters lang, zoals 'VEZY741'
-    "Terminal" VARCHAR(1),       -- 1 karakter lang, zoals 'B'
-    "Gate" VARCHAR(2),           -- 2 karakters lang, zoals 'B5'
-    "Baan" VARCHAR(1),           -- 1 karakter lang, voor baan nummers zoals '2'
-    "Bezetting" VARCHAR(3),      -- Maximaal 3 karakters, voor getallen zoals '85'
-    "Vracht" VARCHAR(1),         -- 1 karakter lang, lijkt leeg te zijn in de dataset maar voor consistentie
-    "Vertrektijd" VARCHAR(19)    -- Datum en tijd in het formaat "YYYY-MM-DD HH:MM:SS", zoals '2014-01-01 03:33:00'
+    "Vluchtid" VARCHAR(10),       -- 6 karakters lang, gebaseerd op de langste waarde zoals '935995'
+    "Vliegtuigcode" VARCHAR(20),  -- 7 karakters lang, zoals 'VEZY741'
+    "Terminal" VARCHAR(5),       -- 1 karakter lang, zoals 'B'
+    "Gate" VARCHAR(5),           -- 2 karakters lang, zoals 'B5'
+    "Baan" VARCHAR(5),           -- 1 karakter lang, voor baan nummers zoals '2'
+    "Bezetting" VARCHAR(10),      -- Maximaal 3 karakters, voor getallen zoals '85'
+    "Vracht" VARCHAR(5),         -- 1 karakter lang, lijkt leeg te zijn in de dataset maar voor consistentie
+    "Vertrektijd" VARCHAR(25)    -- Datum en tijd in het formaat "YYYY-MM-DD HH:MM:SS", zoals '2014-01-01 03:33:00'
 );
 
 
 CREATE TABLE raw.vliegtuig (
-    "Airlinecode" VARCHAR(2),     -- 2 karakters lang, zoals 'TK'
-    "Vliegtuigcode" VARCHAR(7),   -- 7 karakters lang, zoals 'VDL5829'
-    "Vliegtuigtype" VARCHAR(3),   -- 3 karakters lang, voor typeaanduidingen zoals '321'
-    "Bouwjaar" VARCHAR(4)         -- 4 karakters lang, voor het bouwjaar zoals '1970'
+    "Airlinecode" VARCHAR(10),     -- 2 karakters lang, zoals 'TK'
+    "Vliegtuigcode" VARCHAR(20),   -- 7 karakters lang, zoals 'VDL5829'
+    "Vliegtuigtype" VARCHAR(10),   -- 3 karakters lang, voor typeaanduidingen zoals '321'
+    "Bouwjaar" VARCHAR(10)         -- 4 karakters lang, voor het bouwjaar zoals '1970'
 );
 
 CREATE TABLE raw.vliegtuigtype (
-    "IATA" VARCHAR(3),        -- 3 karakters lang, zoals '100'
-    "ICAO" VARCHAR(4),        -- 4 karakters lang, zoals 'F100'
-    "Merk" VARCHAR(20),       -- Geschatte lengte voor merknamen zoals 'British Aerospace'
-    "Type" VARCHAR(30),       -- Geschatte lengte voor types zoals 'BAe 146-200 Pax'
-    "Wake" VARCHAR(1),        -- 1 karakter, categorie van de wake turbulence, zoals 'M'
-    "Cat" VARCHAR(3),         -- 3 karakters, categorie van het vliegtuiggebruik, zoals 'Pax'
-    "Capaciteit" VARCHAR(3),  -- 3 karakters, voor capaciteit zoals '115'
-    "Vracht" VARCHAR(1)       -- Voldoende voor kleine getallen zoals '5'
+    "IATA" VARCHAR(10),        -- 3 karakters lang, zoals '100'
+    "ICAO" VARCHAR(10),        -- 4 karakters lang, zoals 'F100'
+    "Merk" VARCHAR(50),       -- Geschatte lengte voor merknamen zoals 'British Aerospace'
+    "Type" VARCHAR(100),       -- Geschatte lengte voor types zoals 'BAe 146-200 Pax'
+    "Wake" VARCHAR(10),        -- 1 karakter, categorie van de wake turbulence, zoals 'M'
+    "Cat" VARCHAR(10),         -- 3 karakters, categorie van het vliegtuiggebruik, zoals 'Pax'
+    "Capaciteit" VARCHAR(10),  -- 3 karakters, voor capaciteit zoals '115'
+    "Vracht" VARCHAR(10)       -- Voldoende voor kleine getallen zoals '5'
 );
 
 CREATE TABLE raw.vlucht (
-    "Vluchtid" VARCHAR(6),        -- 6 karakters lang, zoals '935995'
-    "Vluchtnr" VARCHAR(6),        -- 6 karakters lang, zoals 'EZY741'
-    "Airlinecode" VARCHAR(3),     -- 3 karakters lang, zoals 'EZY'
-    "Destcode" VARCHAR(3),        -- 3 karakters, voor luchthavencodes zoals 'ACE'
-    "Vliegtuigcode" VARCHAR(7),   -- 7 karakters lang, zoals 'VEZY741'
+    "Vluchtid" VARCHAR(10),        -- 6 karakters lang, zoals '935995'
+    "Vluchtnr" VARCHAR(10),        -- 6 karakters lang, zoals 'EZY741'
+    "Airlinecode" VARCHAR(10),     -- 3 karakters lang, zoals 'EZY'
+    "Destcode" VARCHAR(10),        -- 3 karakters, voor luchthavencodes zoals 'ACE'
+    "Vliegtuigcode" VARCHAR(20),   -- 7 karakters lang, zoals 'VEZY741'
     "Datum" VARCHAR(10)           -- Datum in het formaat "YYYY-MM-DD", zoals '2014-01-01'
 );
 
