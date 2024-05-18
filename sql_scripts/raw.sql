@@ -43,7 +43,7 @@ CREATE TABLE raw.luchthavens (
     "Alt" VARCHAR(10),          -- 4 karakters voor hoogte zoals '2550'
     "TZ" VARCHAR(10),           -- 4 karakters voor tijdzone offset zoals '4.5'
     "DST" VARCHAR(5),          -- 1 karakter voor DST, bijv. 'N'
-    "Tz" VARCHAR(50)           -- Geschatte lengte voor tijdzone namen zoals 'Asia/Kabul'
+    "TzName" VARCHAR(50)           -- Geschatte lengte voor tijdzone namen zoals 'Asia/Kabul'
 );
 
 

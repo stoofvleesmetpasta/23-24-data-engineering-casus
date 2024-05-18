@@ -1,4 +1,4 @@
-Airport	City	Country	IATA	ICAO	Lat	Lon	Alt	TZ	DST	Tz
+Airport	City	Country	IATA	ICAO	Lat	Lon	Alt	TZ	DST	TzName
 Bamyan Airport	Bamyan	Afghanistan	BIN	OABN	34.816667	67.816667	2550	4.5	N	Asia/Kabul
 Camp Bastion 	Camp Bastion	Afghanistan		OAZI	31.865556	64.195278	2808	4.5	N	Asia/Kabul
 Chaghcharan Airport	Chaghcharan	Afghanistan	CCN	OACC	34.526667	65.271667	7383	4.5	U	Asia/Kabul
@@ -25,7 +25,7 @@ Touat Cheikh Sidi Mohamed Belkebir	Adrar	Algeria	AZR	DAUA	27.837589	-0.186414	91
 Ain Oussera	Ain Oussera	Algeria		DAAQ	35.525414	2.878714	2132	1	N	Africa/Algiers
 Houari Boumediene	Algier	Algeria	ALG	DAAG	36.691014	3.215408	82	1	N	Africa/Algiers
 Annaba	Annaba	Algeria	AAE	DABB	36.822225	7.809167	16	1	N	Africa/Algiers
-B?®char Boudghene Ben Ali Lotfi Airport	B?®char	Algeria	CBH	DAOR	31.6457	-2.26986	2661	1	N	Africa/Algiers
+B?ï¿½char Boudghene Ben Ali Lotfi Airport	B?ï¿½char	Algeria	CBH	DAOR	31.6457	-2.26986	2661	1	N	Africa/Algiers
 Batna Airport	Batna	Algeria	BLJ	DABT	35.752106	6.308589	2697	1	N	Africa/Algiers
 Soummam	Bejaja	Algeria	BJA	DAAE	36.711997	5.069922	20	1	N	Africa/Algiers
 Biskra	Biskra	Algeria	BSK	DAUB	34.793289	5.738231	289	1	N	Africa/Algiers
@@ -644,7 +644,7 @@ Chimore	Chapacura	Bolivia		SLCH	-16.990019	-65.141533	1000	-4	U	America/La_Paz
 Heroes Del Acre	Cobija	Bolivia	CIJ	SLCO	-11.040436	-68.782972	892	-4	U	America/La_Paz
 Jorge Wilsterman	Cochabamba	Bolivia	CBB	SLCB	-17.421058	-66.177114	8360	-4	U	America/La_Paz
 Copacabana Airport	Copacabana	Bolivia		SLCC	-16.183326	-69.087501	12591	-4	U	America/La_Paz
-Capit?ín de Av. Emilio Beltr?ín Airport	Guayaramer?¡n	Bolivia	GYA	SLGY	-10.8206	-65.3456	557	-4	U	America/La_Paz
+Capit?ï¿½n de Av. Emilio Beltr?ï¿½n Airport	Guayaramer?ï¿½n	Bolivia	GYA	SLGY	-10.8206	-65.3456	557	-4	U	America/La_Paz
 Isla Pescado	Isla Pescado	Bolivia		\N	-20.240932	-67.62538	12020	-4	S	America/La_Paz
 El Alto Intl	La Paz	Bolivia	LPB	SLLP	-16.513339	-68.192256	13325	-4	U	America/La_Paz
 Juan Mendoza	Oruro	Bolivia		SLOR	-17.962589	-67.076236	12146	-4	U	America/La_Paz
@@ -653,9 +653,9 @@ Puerto Rico Airport	Puerto Rico/Manuripi	Bolivia	PUR	SLPR	-11.1077	-67.5512	597	
 Tte De Av Salvador Ogaya G	Puerto Suarez	Bolivia	PSZ	SLPS	-18.975281	-57.820586	439	-4	U	America/La_Paz
 Rurrenabaque Airport	Rerrenabaque	Bolivia	RBQ	SLRQ	-14.4275	-67.498056	898	-4	U	America/La_Paz
 Reyes Airport	Reyes	Bolivia	REY	SLRY	-14.3044	-67.3534	935	-4	U	America/La_Paz
-Capit?ín Av. Selin Zeitun Lopez Airport	Riberalta	Bolivia	RIB	SLRI	-11	-66	462	-4	U	America/La_Paz
+Capit?ï¿½n Av. Selin Zeitun Lopez Airport	Riberalta	Bolivia	RIB	SLRI	-11	-66	462	-4	U	America/La_Paz
 Salar de Uyuni	Salar de Uyuni	Bolivia		\N	-20.330706	-67.046881	12000	-4	S	America/La_Paz
-Capit?ín Av. German Quiroga G. Airport	San Borja	Bolivia	SRJ	SLSB	-14.8592	-66.7375	633	-4	U	America/La_Paz
+Capit?ï¿½n Av. German Quiroga G. Airport	San Borja	Bolivia	SRJ	SLSB	-14.8592	-66.7375	633	-4	U	America/La_Paz
 Santa Ana Del Yacuma	Santa Ana	Bolivia		SLSA	-13.762208	-65.435158	472	-4	U	America/La_Paz
 Santa Cruz	Santa Cruz	Bolivia	SRZ	\N	-17.8	-63.166667	1224	-4	U	America/La_Paz
 Viru Viru Intl	Santa Cruz	Bolivia	VVI	SLVR	-17.644756	-63.135364	1225	-4	U	America/La_Paz
@@ -795,7 +795,7 @@ Itacoatiara	Itaituba	Brazil		SBIC	-3.127256	-58.481186	142	-4	S	America/Boa_Vist
 Itaituba	Itaituba	Brazil		SBIH	-4.242342	-56.000669	110	-4	S	America/Boa_Vista
 Hidroeletrica	Itumbiara	Brazil		SBIT	-18.444661	-49.213361	1630	-3	S	America/Sao_Paulo
 Jacareacanga	Jacare-acanga	Brazil		SBEK	-6.233156	-57.776869	324	-4	S	America/Boa_Vista
-Ji-Paran?í Airport	Ji-Paran?í	Brazil	JPR	SWJI	-10.8708	-61.8465	598	-4	S	America/Boa_Vista
+Ji-Paran?ï¿½ Airport	Ji-Paran?ï¿½	Brazil	JPR	SWJI	-10.8708	-61.8465	598	-4	S	America/Boa_Vista
 Joacaba Airport	Joacaba	Brazil	JCB	SSJA	-27.172778	-51.500833	1713	-3	S	America/Sao_Paulo
 Presidente Castro Pinto	Joao Pessoa	Brazil	JPA	SBJP	-7.148381	-34.950681	215	-3	S	America/Fortaleza
 Lauro Carneiro De Loyola	Joinville	Brazil	JOI	SBJV	-26.224453	-48.797364	15	-3	S	America/Sao_Paulo
@@ -805,11 +805,11 @@ Francisco De Assis	Juiz De Fora	Brazil	JDF	SBJF	-21.7915	-43.386778	2989	-3	S	Am
 Labrea Airport	Labrea	Brazil	LBR	SWLB	-7.258889	-64.797778	225	-4	S	America/Boa_Vista
 Lagoa Santa	Lagoa Santa	Brazil		SBLS	-19.661611	-43.896403	2795	-3	S	America/Sao_Paulo
 Lages	Lajes	Brazil		SBLJ	-27.782142	-50.281486	3065	-3	S	America/Sao_Paulo
-Chapada Diamantina Airport	Len?º??is	Brazil	LEC	SBLE	-12.4823	-41.277	1676	-3	S	America/Fortaleza
+Chapada Diamantina Airport	Len?ï¿½??is	Brazil	LEC	SBLE	-12.4823	-41.277	1676	-3	S	America/Fortaleza
 Lins	Lins	Brazil	LIP	SBLN	-21.664039	-49.730519	1575	-3	S	America/Sao_Paulo
 Londrina	Londrina	Brazil	LDB	SBLO	-23.333625	-51.130072	1867	-3	S	America/Sao_Paulo
 Bom Futuro Airport	Lucas do Rio Verde	Brazil	LVR	SWFE	-13.05	-55.910833	500	-4	S	America/Campo_Grande
-Maca?® Airport	Maca?®	Brazil	MEA	SBME	-22.343	-41.766	8	-3	S	America/Sao_Paulo
+Maca?ï¿½ Airport	Maca?ï¿½	Brazil	MEA	SBME	-22.343	-41.766	8	-3	S	America/Sao_Paulo
 Embraer Unidade Gaviao Peixoto	Macae	Brazil		SBGP	-21.773683	-48.405078	1998	-3	S	America/Sao_Paulo
 Macapa	Macapa	Brazil	MCP	SBMQ	0.050664	-51.072178	56	-3	S	America/Fortaleza
 Zumbi Dos Palmares	Maceio	Brazil	MCZ	SBMO	-9.510808	-35.791678	387	-3	S	America/Fortaleza
@@ -817,7 +817,7 @@ Eduardo Gomes Intl	Manaus	Brazil	MAO	SBEG	-3.038611	-60.049721	264	-4	S	America/
 Ponta Pelada Airport	Manaus	Brazil	PLL	\N	-3.14604	-59.9863	267	-4	S	America/Boa_Vista
 Ponta Pelada	Manaus	Brazil		SBMN	-3.146042	-59.9863	267	-4	S	America/Boa_Vista
 Manicore	Manicore	Brazil	MNX	SBMY	-5.811381	-61.278319	174	-4	S	America/Boa_Vista
-Mar?¡lia Airport	Mar?¡lia	Brazil	MII	SBML	-22.196892	-49.9264	2122	-3	S	America/Sao_Paulo
+Mar?ï¿½lia Airport	Mar?ï¿½lia	Brazil	MII	SBML	-22.196892	-49.9264	2122	-3	S	America/Sao_Paulo
 Maraba	Maraba	Brazil	MAB	SBMA	-5.368589	-49.138025	357	-4	S	America/Boa_Vista
 Regional De Maringa Silvio Name Junior	Maringa	Brazil	MGF	SBMG	-23.476392	-52.016406	1788	-3	S	America/Sao_Paulo
 Maturaca	Maturaca	Brazil		SWMK	0.628269	-66.115128	354	-4	S	America/Boa_Vista
@@ -861,7 +861,7 @@ Presidente Prudente	President Prudente	Brazil	PPB	SBDN	-22.175056	-51.424639	147
 Guararapes Gilberto Freyre Intl	Recife	Brazil	REC	SBRF	-8.126794	-34.923039	33	-3	S	America/Fortaleza
 Redencao Airport	Redencao	Brazil	RDC	SNDC	-8.033333	-49.98	669	-4	S	America/Boa_Vista
 Leite Lopes	Ribeirao Preto	Brazil	RAO	SBRP	-21.134167	-47.774189	1802	-3	S	America/Sao_Paulo
-Pl?â?ícido de Castro	Rio Branco	Brazil	RBR	SBRB	-9.583	-67.4836	633	-5	S	America/Rio_Branco
+Pl?ï¿½?ï¿½cido de Castro	Rio Branco	Brazil	RBR	SBRB	-9.583	-67.4836	633	-5	S	America/Rio_Branco
 Galeao Antonio Carlos Jobim	Rio De Janeiro	Brazil	GIG	SBGL	-22.808903	-43.243647	28	-3	S	America/Sao_Paulo
 Santos Dumont	Rio De Janeiro	Brazil	SDU	SBRJ	-22.910461	-43.163133	11	-3	S	America/Sao_Paulo
 Santa Cruz	Rio De Janeiro	Brazil	STU	SBSC	-22.93235	-43.719092	10	-3	S	America/Sao_Paulo
@@ -1117,7 +1117,7 @@ Fort St. James - Perison Airport	Fort St. James	Canada	YJM	CYJM	54.397222	-124.2
 Fox Harbour Airport	Fox Harbour	Canada		\N	45.87	-63.461111	62	-4	A	America/Halifax
 Fraser Railroad Station	Fraser BC	Canada		\N	59.715517	-135.046692	2000	-8	U	America/Vancouver
 Fredericton	Fredericton	Canada	YFC	CYFC	45.868889	-66.537222	68	-4	A	America/Halifax
-Rae Lakes Airport	Gam?¿t?¼	Canada	YRA	CYRA	64.1161	-117.31	723	-7	A	America/Edmonton
+Rae Lakes Airport	Gam?ï¿½t?ï¿½	Canada	YRA	CYRA	64.1161	-117.31	723	-7	A	America/Edmonton
 Gander Intl	Gander	Canada	YQX	CYQX	48.936944	-54.568056	496	-3.5	A	America/St_Johns
 Ganges Water Aerodrome	Ganges	Canada	YGG	\N	48.85	-123.5	0	-8	A	America/Vancouver
 Ganges Water Aerodrome	Ganges	Canada		CAX6	48.85	-123.5	0	-8	A	America/Vancouver
@@ -1188,7 +1188,7 @@ Kuujjuarapik Airport	Kuujjuarapik	Canada	YGW	CYGW	55.2819	-77.7653	34	-5	A	Ameri
 La Grande Riviere	La Grande Riviere	Canada	YGL	CYGL	53.625278	-77.704167	639	-5	A	America/Toronto
 La Romaine Airport	La Romaine	Canada		CTT5	50.257222	-60.669167	90	-4	A	America/Blanc-Sablon
 La Ronge	La Ronge	Canada	YVC	CYVC	55.15139	-105.261944	1242	-6	N	America/Regina
-La Tabati?¿re Airport	La Tabati?¿re	Canada	ZLT	CTU5	50.8308	-58.9756	102	-4	A	America/Blanc-Sablon
+La Tabati?ï¿½re Airport	La Tabati?ï¿½re	Canada	ZLT	CTU5	50.8308	-58.9756	102	-4	A	America/Blanc-Sablon
 Lac Brochet Airport	Lac Brochet	Canada	XLB	CZWH	58.614167	-101.468889	1212	-6	A	America/Winnipeg
 Lac Du Bonnet Airport	Lac Du Bonnet	Canada		CYAX	50.2944	-96.01	850	-6	A	America/Winnipeg
 Lagoon Cove water aerodrome	Lagoon Cove	Canada		\N	50.6	-126.3167	0	-8	A	America/Vancouver
@@ -1357,7 +1357,7 @@ Sundre Airport	Sundre	Canada		\N	51.774722	-114.680833	3663	-7	A	America/Edmonto
 Swan River Airport	Swan River	Canada	ZJN	CZJN	52.1206	-101.236	1100	-6	A	America/Winnipeg
 Swift Current	Swift Current	Canada	YYN	CYYN	50.291944	-107.690556	2680	-6	N	America/Regina
 Sydney	Sydney	Canada	YQY	CYQY	46.161388	-60.047779	203	-4	A	America/Halifax
-T?¬te-?á-la-Baleine Airport	T?¬te-?á-la-Baleine	Canada	ZTB	CTB6	50.6744	-59.3836	107	-4	A	America/Blanc-Sablon
+T?ï¿½te-?ï¿½-la-Baleine Airport	T?ï¿½te-?ï¿½-la-Baleine	Canada	ZTB	CTB6	50.6744	-59.3836	107	-4	A	America/Blanc-Sablon
 Tadoule Lake Airport	Tadoule Lake	Canada	XTL	CYBQ	58.706111	-98.512222	923	-6	A	America/Winnipeg
 Tasiujaq Airport	Tasiujaq	Canada	YTQ	CYTQ	58.6678	-69.9558	122	-5	A	America/Toronto
 Terrace	Terrace	Canada	YXT	CYXT	54.468508	-128.576219	713	-8	A	America/Vancouver
@@ -1407,7 +1407,7 @@ Webequie Airport	Webequie	Canada	YWP	CYWP	52.9597	-87.3689	685	-5	A	America/Toro
 Wekweeti Airport	Wekweeti	Canada		CFJ2	64.190833	-114.076667	1206	-7	A	America/Edmonton
 Wemindji Airport	Wemindji	Canada	YNC	CYNC	53.0106	-78.8311	66	-5	A	America/Toronto
 Whale Cove Airport	Whale Cove	Canada	YXN	CYXN	62.24	-92.5981	40	-6	A	America/Winnipeg
-What?¼ Airport	What?¼	Canada	YLE	CEM3	63.1317	-117.246	882	-7	A	America/Edmonton
+What?ï¿½ Airport	What?ï¿½	Canada	YLE	CEM3	63.1317	-117.246	882	-7	A	America/Edmonton
 Whistler/Green Lake Water Aerodrome	Whistler	Canada	YWS	CAE5	50.1436	-122.949	2100	-8	A	America/Vancouver
 Whitecourt	Whitecourt	Canada	YZU	CYZU	54.14389	-115.786667	2567	-7	A	America/Edmonton
 Whitehorse Intl	Whitehorse	Canada	YXY	CYXY	60.709553	-135.067269	2317	-8	A	America/Vancouver
@@ -1462,7 +1462,7 @@ Copiapo	Copiapo	Chile	CPO	SCHA	-27	-70	1000	-4	S	America/Santiago
 Teniente Vidal	Coyhaique	Chile	GXQ	SCCY	-45.594211	-72.106133	1020	-4	S	America/Santiago
 General Freire	Curico	Chile		SCIC	-34.9667	-71.2164	722	-4	S	America/Santiago
 Mataveri Intl	Easter Island	Chile	IPC	SCIP	-27.164792	-109.421831	227	-6	S	Pacific/Easter
-Ricardo Garc?¡a Posada Airport	El Salvador	Chile	ESR	SCES	-26.3111	-69.7652	5240	-4	S	America/Santiago
+Ricardo Garc?ï¿½a Posada Airport	El Salvador	Chile	ESR	SCES	-26.3111	-69.7652	5240	-4	S	America/Santiago
 Futaleufu	Futaleufu	Chile		SCFT	-43.189167	-71.851112	1148	-4	S	America/Santiago
 Diego Aracena Intl	Iquique	Chile	IQQ	SCDA	-20.535222	-70.181275	155	-4	S	America/Santiago
 Isla San Felix	Isla San Felix	Chile		SCFX	-26.293864	-80.096214	165	-4	U	America/Santiago
@@ -1750,7 +1750,7 @@ Mira Flores	Mira Flores	Colombia		\N	1.444549	-71.949921	300	-5	S	America/Bogota
 Fabio Alberto Leon Bentley	Mitu	Colombia	MVP	SKMU	1.253664	-70.233878	680	-5	U	America/Bogota
 Los Garzones	Monteria	Colombia	MTR	SKMR	8.823744	-75.825831	36	-5	U	America/Bogota
 Benito Salas	Neiva	Colombia	NVA	SKNV	2.95015	-75.294	1464	-5	U	America/Bogota
-Reyes Murillo Airport	Nuqu?¡	Colombia	NQU	SKNQ	5.7	-77.28	12	-5	U	America/Bogota
+Reyes Murillo Airport	Nuqu?ï¿½	Colombia	NQU	SKNQ	5.7	-77.28	12	-5	U	America/Bogota
 Aguas Claras	Ocana	Colombia	OCV	SKOC	8.315061	-73.358331	3850	-5	U	America/Bogota
 Otu	Otu	Colombia	OTU	SKOT	7.010369	-74.715497	2060	-5	U	America/Bogota
 Antonio Narino	Pasto	Colombia	PSO	SKPS	1.396247	-77.291478	5951	-5	U	America/Bogota
@@ -1761,8 +1761,8 @@ El Embrujo	Providencia	Colombia	PVA	SKPV	13.356944	-81.35833	10	-5	U	America/Bog
 Tres De Mayo	Puerto Asis	Colombia	PUU	SKAS	0.505228	-76.500836	815	-5	U	America/Bogota
 Puerto Bolivar	Puerto Bolivar	Colombia		SKPB	12.221483	-71.984817	90	-5	U	America/Bogota
 Puerto Carreno	Puerto Carreno	Colombia	PCR	SKPC	6.184717	-67.493164	177	-5	U	America/Bogota
-Obando Airport	Puerto In?¡rida	Colombia	PDA	SKPD	3.85	-67.91	460	-5	U	America/Bogota
-Caucaya Airport	Puerto Legu?¡zamo	Colombia	LQM	SKLG	-0.18	-74.77	573	-5	U	America/Bogota
+Obando Airport	Puerto In?ï¿½rida	Colombia	PDA	SKPD	3.85	-67.91	460	-5	U	America/Bogota
+Caucaya Airport	Puerto Legu?ï¿½zamo	Colombia	LQM	SKLG	-0.18	-74.77	573	-5	U	America/Bogota
 El Carano	Quibdo	Colombia	UIB	SKUI	5.690758	-76.641181	204	-5	U	America/Bogota
 Almirante Padilla	Rio Hacha	Colombia	RCH	SKRH	11.526222	-72.925958	43	-5	U	America/Bogota
 Jose Maria Cordova	Rio Negro	Colombia	MDE	SKRG	6.164536	-75.423119	6955	-5	U	America/Bogota
@@ -1772,14 +1772,14 @@ Eduardo Falla Solano	San Vincente De Caguan	Colombia	SVI	SKSV	2.152175	-74.76635
 Simon Bolivar	Santa Marta	Colombia	SMR	SKSM	11.11965	-74.230647	22	-5	U	America/Bogota
 Los Colonizadores Airport	Saravena	Colombia	RVE	SKSA	6.916667	-71.9	10	-5	U	America/Bogota
 Tame	Tame	Colombia	TME	SKTM	6.451081	-71.760261	1050	-5	U	America/Bogota
-Tarapac?í Airport	Tarapac?í	Colombia	TCD		-2.867	-69.733	0	-5	U	America/Bogota
+Tarapac?ï¿½ Airport	Tarapac?ï¿½	Colombia	TCD		-2.867	-69.733	0	-5	U	America/Bogota
 Golfo de Morrosquillo Airport	Tolu	Colombia	TLU	SKTL	9.511944	-75.586389	10	-5	U	America/Bogota
 Farfan	Tulua	Colombia	ULQ	SKUL	4.088358	-76.235133	3132	-5	U	America/Bogota
 La Florida	Tumaco	Colombia	TCO	SKCO	1.814417	-78.749228	8	-5	U	America/Bogota
 Alfonso Lopez Pumarejo	Valledupar	Colombia	VUP	SKVP	10.435042	-73.249506	456	-5	U	America/Bogota
 Villa Garzon Airport	Villa Garzon	Colombia	VGZ	SKVG	0.978889	-76.605556	1248	-5	U	America/Bogota
 Vanguardia	Villavicencio	Colombia	VVC	SKVV	4.167875	-73.613761	1394	-5	U	America/Bogota
-El Alcarav?ín Airport	Yopal	Colombia	EYP	SKYP	5.319114	-72.383975	1028	-5	U	America/Bogota
+El Alcarav?ï¿½n Airport	Yopal	Colombia	EYP	SKYP	5.319114	-72.383975	1028	-5	U	America/Bogota
 Ouani	Anjouan	Comoros	AJN	FMCV	-12.131667	44.430279	62	3	U	Indian/Comoro
 Bandaressalam	Moheli	Comoros	NWA	FMCI	-12.298108	43.7664	46	3	U	Indian/Comoro
 Prince Said Ibrahim	Moroni	Comoros	HAH	FMCH	-11.533661	43.27185	93	3	U	Indian/Comoro
@@ -1985,7 +1985,7 @@ Casa De Campo Intl	La Romana	Dominican Republic	LRM	MDLR	18.450711	-68.911833	24
 Monte Plata Batley Juan Sanchez Field	Monte Plata	Dominican Republic		MDJS	18.81	-69.79	1424	-4	U	America/Santo_Domingo
 Gregorio Luperon Intl	Puerto Plata	Dominican Republic	POP	MDPP	19.7579	-70.570033	15	-4	U	America/Santo_Domingo
 Punta Cana Intl	Punta Cana	Dominican Republic	PUJ	MDPC	18.567367	-68.363431	47	-4	U	America/Santo_Domingo
-Saman?í El Catey International Airport	Samana	Dominican Republic	AZS	MDCY	19.267	-69.742	30	-4	U	America/Santo_Domingo
+Saman?ï¿½ El Catey International Airport	Samana	Dominican Republic	AZS	MDCY	19.267	-69.742	30	-4	U	America/Santo_Domingo
 Arroyo Barril Intl	Samana	Dominican Republic	EPS	MDAB	19.198586	-69.429772	57	-4	U	America/Santo_Domingo
 San Isidro Ab	San Isidoro	Dominican Republic		MDSI	18.503706	-69.761706	111	-4	U	America/Santo_Domingo
 Cibao Intl	Santiago	Dominican Republic	STI	MDST	19.406092	-70.604689	565	-4	U	America/Santo_Domingo
@@ -2170,7 +2170,7 @@ Rantasalmi	Rantasalmi	Finland		EFRN	62.065481	28.356494	292	2	E	Europe/Helsinki
 Rayskala	Rayskala	Finland		EFRY	60.744722	24.107778	407	2	E	Europe/Helsinki
 Rovaniemi	Rovaniemi	Finland	RVN	EFRO	66.564822	25.830411	642	2	E	Europe/Helsinki
 Savonlinna	Savonlinna	Finland	SVL	EFSA	61.943064	28.945136	311	2	E	Europe/Helsinki
-Sein?ñjoki Airport	Sein?ñjoki / Ilmajoki	Finland	SJY	EFSI	62.6921	22.8323	302	2	E	Europe/Helsinki
+Sein?ï¿½joki Airport	Sein?ï¿½joki / Ilmajoki	Finland	SJY	EFSI	62.6921	22.8323	302	2	E	Europe/Helsinki
 Selanpaa	Selanpaa	Finland		EFSE	61.062389	26.798861	417	2	E	Europe/Helsinki
 Sodankyla	Sodankyla	Finland	SOT	EFSO	67.395033	26.619133	602	2	E	Europe/Helsinki
 Tampere Pirkkala	Tampere	Finland	TMP	EFTP	61.414147	23.604392	390	2	E	Europe/Helsinki
@@ -2181,7 +2181,7 @@ Vaasa	Vaasa	Finland	VAA	EFVA	63.05065	21.762175	19	2	E	Europe/Helsinki
 Varkaus	Varkaus	Finland	VRK	EFVR	62.171111	27.868611	286	2	E	Europe/Helsinki
 Lahti Vesivehmaa	Vesivehmaa	Finland		EFLA	61.144158	25.693508	502	2	E	Europe/Helsinki
 Ylivieska	Ylivieska-raudaskyla	Finland		EFYL	64.060547	24.715953	252	2	E	Europe/Helsinki
-?Äle d'Yeu Airport	?Äle d'Yeu	France	IDY	LFEY	46.718611	-2.391111	79	1	E	Europe/Paris
+?ï¿½le d'Yeu Airport	?ï¿½le d'Yeu	France	IDY	LFEY	46.718611	-2.391111	79	1	E	Europe/Paris
 Abbeville	Abbeville	France		LFOI	50.143492	1.831892	220	1	E	Europe/Paris
 La Garenne	Agen	France	AGF	LFBA	44.174721	0.590556	204	1	E	Europe/Paris
 Aire Sur L Adour	Aire-sur-l'adour	France		LFDA	43.709444	-0.245278	259	1	E	Europe/Paris
@@ -2196,7 +2196,7 @@ Glisy	Amiens	France		LFAY	49.873019	2.387075	208	1	E	Europe/Paris
 Ancenis	Ancenis	France		LFFI	47.408056	-1.1775	111	1	E	Europe/Paris
 Andernos-Les-Bains	Andernos-Les-Bains	France		LFCD	44.81111	-1.186023	0	1	E	Europe/Paris
 Angers St Laud	Angers	France	QXG	\N	47.464714	-0.556405	300	1	E	Europe/Paris
-Angers-Loire Airport	Angers/Marc?®	France	ANE	LFJR	47.5603	-0.312222	194	1	E	Europe/Paris
+Angers-Loire Airport	Angers/Marc?ï¿½	France	ANE	LFJR	47.5603	-0.312222	194	1	E	Europe/Paris
 Brie Champniers	Angouleme	France	ANG	LFBU	45.729247	0.221456	436	1	E	Europe/Paris
 Meythet	Annecy	France	NCY	LFLP	45.929233	6.098764	1521	1	E	Europe/Paris
 Annemasse	Annemasse	France	QNJ	LFLI	46.191972	6.268386	1620	1	E	Europe/Paris
@@ -2914,11 +2914,11 @@ Point Salines Intl	Point Salines	Grenada	GND	TGPY	12.004247	-61.786192	41	-4	U	A
 Grenada Port Authority Cruise Ship Terminal	St. George's	Grenada		GREN	12.050773	-61.754982	0	-4	N	America/Grenada
 Baillif Airport	Basse Terre	Guadeloupe	BBR	TFFB	16.0133	-61.7422	59	-4	U	America/Guadeloupe
 Les Bases Airport	Grand Bourg	Guadeloupe	GBJ	TFFM	15.86875	-61.270022	16	-4	U	America/Guadeloupe
-La D?®sirade Airport	Grande Anse	Guadeloupe	DSD	TFFA	16.2969	-61.0844	10	-4	U	America/Guadeloupe
+La D?ï¿½sirade Airport	Grande Anse	Guadeloupe	DSD	TFFA	16.2969	-61.0844	10	-4	U	America/Guadeloupe
 Terre-de-Haut Airport	Les Saintes	Guadeloupe	LSS	TFFS	15.8644	-61.5806	46	-4	U	America/Guadeloupe
 Le Raizet	Pointe-a-pitre	Guadeloupe	PTP	TFFR	16.265306	-61.531806	36	-4	U	America/Guadeloupe
 Grand Case	St. Martin	Guadeloupe	SFG	TFFG	18.099914	-63.047197	7	-4	U	\N
-St-Fran?ºois Airport	St-Fran?ºois	Guadeloupe	SFC	TFFC	16.2578	-61.2625	10	-4	U	America/Guadeloupe
+St-Fran?ï¿½ois Airport	St-Fran?ï¿½ois	Guadeloupe	SFC	TFFC	16.2578	-61.2625	10	-4	U	America/Guadeloupe
 Guam Intl	Agana	Guam	GUM	PGUM	13.48345	144.795983	298	10	U	Pacific/Guam
 Andersen Afb	Andersen	Guam	UAM	PGUA	13.583953	144.930025	627	10	U	Pacific/Guam
 Bananera	Bananera	Guatemala		MGBN	15.473528	-88.837222	130	-6	U	America/Guatemala
@@ -2998,14 +2998,14 @@ Ferihegy	Budapest	Hungary	BUD	LHBP	47.436933	19.255592	495	1	E	Europe/Budapest
 Budapest Keteli	Budapest	Hungary		\N	47.500497	19.085484	100	1	E	Europe/Budapest
 Budapest Keleti pu.	Budapest	Hungary		\N	-47.500278	-160.916111	0	1	E	\N
 Debrecen	Debrecen	Hungary	DEB	LHDC	47.488917	21.615333	359	1	E	Europe/Budapest
-Gy?ær-P?®r International Airport	Gy?ær	Hungary	QGY	LHPR	47.627097	17.808347	424	1	N	Europe/Budapest
+Gy?ï¿½r-P?ï¿½r International Airport	Gy?ï¿½r	Hungary	QGY	LHPR	47.627097	17.808347	424	1	N	Europe/Budapest
 Kecskemet	Kecskemet	Hungary		LHKE	46.9175	19.749222	376	1	E	Europe/Budapest
 Nyiregyhaza	Nyirregyhaza	Hungary		LHNY	47.983892	21.692317	338	1	E	Europe/Budapest
 Ocseny	Ocseny	Hungary		LHOY	46.303889	18.769167	295	1	E	Europe/Budapest
-P?®cs-Pog?íny Airport	P?®cs-Pog?íny	Hungary	PEV	LHPP	45.990928	18.240983	1000	1	N	Europe/Budapest
+P?ï¿½cs-Pog?ï¿½ny Airport	P?ï¿½cs-Pog?ï¿½ny	Hungary	PEV	LHPP	45.990928	18.240983	1000	1	N	Europe/Budapest
 Papa Airport	Papa	Hungary		LHPA	47.3636	17.5008	466	1	E	Europe/Budapest
 Pecs	Pecs	Hungary	QPJ	\N	46.070833	18.233056	1000	1	E	Europe/Budapest
-S?írmell?®k International Airport	S?írmell?®k	Hungary	SOB	LHSM	46.686389	17.159056	408	1	N	Europe/Budapest
+S?ï¿½rmell?ï¿½k International Airport	S?ï¿½rmell?ï¿½k	Hungary	SOB	LHSM	46.686389	17.159056	408	1	N	Europe/Budapest
 SZEGED	SZEGED	Hungary		\N	46.252761	20.096519	100	1	E	Europe/Budapest
 Szolnok	Szolnok	Hungary		LHSN	47.122861	20.2355	322	1	E	Europe/Budapest
 Akureyri	Akureyri	Iceland	AEY	BIAR	65.659994	-18.072703	6	0	N	Atlantic/Reykjavik
@@ -3013,7 +3013,7 @@ Bakki Airport	Bakki	Iceland		BIBA	63.55805	-20.14833	45	0	N	Atlantic/Reykjavik
 Bildudalur Airport	Bildudalur	Iceland	BIU	BIBD	65.641389	-23.546111	26	0	N	Atlantic/Reykjavik
 Egilsstadir	Egilsstadir	Iceland	EGS	BIEG	65.283333	-14.401389	76	0	N	Atlantic/Reykjavik
 Gjogur Airport	Gjogur	Iceland	GJR	BIGJ	65.995278	-21.326944	98	0	N	Atlantic/Reykjavik
-Gr?¡msey Airport	Gr?¡msey	Iceland	GRY	BIGR	66.5547	-18.0175	66	0	N	Atlantic/Reykjavik
+Gr?ï¿½msey Airport	Gr?ï¿½msey	Iceland	GRY	BIGR	66.5547	-18.0175	66	0	N	Atlantic/Reykjavik
 Hornafjordur	Hofn	Iceland	HFN	BIHN	64.295556	-15.227222	24	0	N	Atlantic/Reykjavik
 Husavik	Husavik	Iceland	HZK	BIHU	65.952328	-17.425978	48	0	N	Atlantic/Reykjavik
 Isafjordur	Isafjordur	Iceland	IFJ	BIIS	66.058056	-23.135278	8	0	N	Atlantic/Reykjavik
@@ -3029,7 +3029,7 @@ Seydisfjordur	Seydisfjordur	Iceland		\N	65.26016	-14.00905	0	0	E	Atlantic/Reykja
 Siglufjordur	Siglufjordur	Iceland	SIJ	BISI	66.133333	-18.916667	10	0	N	Atlantic/Reykjavik
 Thorshofn Airport	Thorshofn	Iceland	THO	BITN	66.2185	-15.3356	65	0	N	Atlantic/Reykjavik
 Vestmannaeyjar	Vestmannaeyjar	Iceland	VEY	BIVM	63.424303	-20.278875	326	0	N	Atlantic/Reykjavik
-Vopnafj?Âr??ur Airport	Vopnafj?Âr??ur	Iceland	VPN	BIVO	65.7206	-14.8506	0	0	N	Atlantic/Reykjavik
+Vopnafj?ï¿½r??ur Airport	Vopnafj?ï¿½r??ur	Iceland	VPN	BIVO	65.7206	-14.8506	0	0	N	Atlantic/Reykjavik
 Agartala	Agartala	India	IXA	VEAT	23.886978	91.24045	46	5.5	N	Asia/Calcutta
 Agatti	Agatti Island	India	AGX	VOAT	10.823656	72.176042	14	5.5	N	Asia/Calcutta
 Agra	Agra	India	AGR	VIAG	27.155831	77.960892	551	5.5	N	Asia/Calcutta
@@ -3762,7 +3762,7 @@ Ali Al Salem Air Base	Kuwait	Kuwait		OKAS	29.346742	47.520753	472	3	A	Asia/Kuwai
 Batken Airport	Batken	Kyrgyzstan		UA30	40.0427	70.8381	3474	6	E	Asia/Bishkek
 Manas	Bishkek	Kyrgyzstan	FRU	UAFM	43.061306	74.477556	2058	6	U	Asia/Bishkek
 Osh	Osh	Kyrgyzstan	OSS	UAFO	40.608989	72.793269	2927	6	U	Asia/Bishkek
-Issyk-Kul International Airport	Tamchy	Kyrgyzstan	ðÿðÜðú	UCFL	42.3527	76.4278	5426	6	N	Asia/Bishkek
+Issyk-Kul International Airport	Tamchy	Kyrgyzstan	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	UCFL	42.3527	76.4278	5426	6	N	Asia/Bishkek
 Ban Huoeisay Airport	Huay Xai	Laos	OUI	VLHS	20.2573	100.437	1380	7	N	Asia/Vientiane
 Luang Namtha	Luang Namtha	Laos	LXG	VLLN	20.960556	101.4025	1968	7	U	Asia/Vientiane
 Luang Phabang Intl	Luang Prabang	Laos	LPQ	VLLB	19.897914	102.160764	955	7	U	Asia/Vientiane
@@ -3855,7 +3855,7 @@ Morafenobe Airport	Morafenobe	Madagascar	TVA	FMMR	-17.85	44.917	748	3	U	Indian/A
 Morombe	Morombe	Madagascar	MXM	FMSR	-21.753867	43.375533	16	3	U	Indian/Antananarivo
 Morondava	Morondava	Madagascar	MOQ	FMMV	-20.28475	44.317614	30	3	U	Indian/Antananarivo
 Fascene	Nosy-be	Madagascar	NOS	FMNN	-13.312067	48.314822	36	3	U	Indian/Antananarivo
-Port Berg?® Airport	Port Berg?®	Madagascar	WPB	FMNG	-15.583	47.617	213	3	U	Indian/Antananarivo
+Port Berg?ï¿½ Airport	Port Berg?ï¿½	Madagascar	WPB	FMNG	-15.583	47.617	213	3	U	Indian/Antananarivo
 Sainte Marie	Sainte Marie	Madagascar	SMS	FMMS	-17.093889	49.815834	7	3	U	Indian/Antananarivo
 Sambava	Sambava	Madagascar	SVB	FMNS	-14.278611	50.174721	20	3	U	Indian/Antananarivo
 Soalala Airport	Soalala	Madagascar	DWB	FMNO	-16.083	45.367	141	3	U	Indian/Antananarivo
@@ -4300,7 +4300,7 @@ Dr AC Wathey Cruise Pier	Philipsburg	Netherlands Antilles		PHBG	18.011475	-63.04
 Philipsburg Bus Stop	Philipsburg	Netherlands Antilles		PHSM	18.0263	-63.049759	0	-4	N	America/Curacao
 Juancho E. Yrausquin	Saba	Netherlands Antilles	SAB	TNCS	17.645278	-63.220556	60	-4	U	America/Curacao
 Hato	Willemstad	Netherlands Antilles	CUR	TNCC	12.188853	-68.959803	29	-4	U	America/Curacao
-?Äle des Pins Airport	?Äle des Pins	New Caledonia	ILP	NWWE	-22.5889	167.456	315	11	U	Pacific/Noumea
+?ï¿½le des Pins Airport	?ï¿½le des Pins	New Caledonia	ILP	NWWE	-22.5889	167.456	315	11	U	Pacific/Noumea
 Kone	Kone	New Caledonia	KNQ	NWWD	-21.053428	164.837806	23	11	U	Pacific/Noumea
 Koumac	Koumac	New Caledonia	KOC	NWWK	-20.546314	164.255625	42	11	U	Pacific/Noumea
 Lifou	Lifou	New Caledonia	LIF	NWWL	-20.7748	167.239864	92	11	U	Pacific/Noumea
@@ -4455,11 +4455,11 @@ Banak	Lakselv	Norway	LKL	ENNA	70.068814	24.973489	25	1	E	Europe/Oslo
 Leikanger Terminal	Leikanger	Norway		\N	61.1351	6.4723	6	1	E	Europe/Oslo
 Leknes Airport	Leknes	Norway	LKN	ENLK	68.1525	13.6094	78	1	E	Europe/Oslo
 Mehamn	Mehamn	Norway	MEH	ENMR	71.029722	27.826667	41	1	E	Europe/Oslo
-R?©ssvoll Airport	Mo i Rana	Norway	MQN	ENRA	66.3639	14.3014	229	1	E	Europe/Oslo
+R?ï¿½ssvoll Airport	Mo i Rana	Norway	MQN	ENRA	66.3639	14.3014	229	1	E	Europe/Oslo
 Aro	Molde	Norway	MOL	ENML	62.744722	7.2625	10	1	E	Europe/Oslo
 Kjaerstad	Mosjoen	Norway	MJF	ENMS	65.783997	13.214914	237	1	E	Europe/Oslo
 Myrdal Station	Myrdal	Norway		\N	60.4418	7.0723	2844	1	E	Europe/Oslo
-Namsos H?©knes?©ra Airport	Namsos	Norway	OSY	ENNM	64.4722	11.5786	7	1	E	Europe/Oslo
+Namsos H?ï¿½knes?ï¿½ra Airport	Namsos	Norway	OSY	ENNM	64.4722	11.5786	7	1	E	Europe/Oslo
 Framnes	Narvik	Norway	NVK	ENNK	68.435833	17.388056	97	1	E	Europe/Oslo
 Notodden	Notodden	Norway	NTB	ENNO	59.565683	9.212222	63	1	E	Europe/Oslo
 Orland	Orland	Norway	OLA	ENOL	63.698908	9.604003	28	1	E	Europe/Oslo
@@ -4467,8 +4467,8 @@ Hovden	Orsta-Volda	Norway	HOV	ENOV	62.18	6.0742	242	1	E	Europe/Oslo
 Fornebu	Oslo	Norway	FBU	ENFB	59.883333	10.616667	56	1	E	Europe/Oslo
 Gardermoen Airport	Oslo	Norway	GEN	\N	60.1939	11.1004	681	1	E	Europe/Oslo
 Gardermoen	Oslo	Norway	OSL	ENGM	60.193917	11.100361	681	1	E	Europe/Oslo
-Ryum Airport	R?©rvik	Norway	RVK	ENRM	64.8383	11.1461	14	1	E	Europe/Oslo
-R?©st Airport	R?©st	Norway	RET	ENRS	67.5278	12.1033	7	1	E	Europe/Oslo
+Ryum Airport	R?ï¿½rvik	Norway	RVK	ENRM	64.8383	11.1461	14	1	E	Europe/Oslo
+R?ï¿½st Airport	R?ï¿½st	Norway	RET	ENRS	67.5278	12.1033	7	1	E	Europe/Oslo
 Rakkestad Flyplass	Rakkestad	Norway		ENRK	59.3975	11.3469	381	1	E	Europe/Oslo
 Roros	Roros	Norway	RRS	ENRO	62.578411	11.342347	2054	1	E	Europe/Oslo
 Moss	Rygge	Norway	RYG	ENRY	59.378933	10.785389	174	1	E	Europe/Oslo
@@ -4483,12 +4483,12 @@ Sola	Stavanger	Norway	SVG	ENZV	58.876778	5.637856	29	1	E	Europe/Oslo
 Skagen	Stokmarknes	Norway	SKN	ENSK	68.580833	15.026111	11	1	E	Europe/Oslo
 Sorstokken	Stord	Norway	SRP	ENSO	59.791925	5.34085	160	1	E	Europe/Oslo
 Longyear	Svalbard	Norway	LYR	ENSB	78.246111	15.465556	88	1	E	Arctic/Longyearbyen
-Svolv?ªr Helle Airport	Svolv?ªr	Norway	SVJ	ENSH	68.2433	14.6692	27	1	E	Europe/Oslo
+Svolv?ï¿½r Helle Airport	Svolv?ï¿½r	Norway	SVJ	ENSH	68.2433	14.6692	27	1	E	Europe/Oslo
 Langnes	Tromso	Norway	TOS	ENTC	69.683333	18.918919	31	1	E	Europe/Oslo
 Vaernes	Trondheim	Norway	TRD	ENVA	63.457556	10.92425	56	1	E	Europe/Oslo
-V?ªr?©y Heliport	V?ªr?©y	Norway	VRY	ENVR	67.6667	12.6833	36	1	E	Europe/Oslo
+V?ï¿½r?ï¿½y Heliport	V?ï¿½r?ï¿½y	Norway	VRY	ENVR	67.6667	12.6833	36	1	E	Europe/Oslo
 Airport	Vadso	Norway	VDS	ENVD	70.065	29.844	127	1	E	Europe/Oslo
-Svartnes Airport	Vard?©	Norway	VAW	ENSS	70.355392	31.044889	42	1	E	Europe/Oslo
+Svartnes Airport	Vard?ï¿½	Norway	VAW	ENSS	70.355392	31.044889	42	1	E	Europe/Oslo
 Bomoen	Voss	Norway		ENBM	60.63885	6.501497	300	1	E	Europe/Oslo
 Khasab	Khasab	Oman	KHS	OOKB	26.170986	56.240569	100	4	U	Asia/Muscat
 Marmul	Marmul	Oman	OMM	OONR	18.133333	55.266666	900	4	N	Asia/Muscat
@@ -4548,10 +4548,10 @@ Peleliu Airfield	Peleliu	Palau	C23	\N	6.998333	134.232778	9	9	U	Pacific/Palau
 Yasser Arafat Intl	Gaza	Palestine	GZA	LVGZ	31.246389	34.276111	320	2	U	Asia/Gaza
 Achutupo Airport	Achutupo	Panama	ACU	\N	9.2	-77.98	0	-5	U	America/Panama
 Bahia Pi??a Airport	Bahia Pi??a	Panama	BFQ		7.583	-78.2	14	-5	U	America/Panama
-Sambu Airport	Boca de S?íbalo	Panama	SAX		8.017	-78.2	32	-5	U	America/Panama
+Sambu Airport	Boca de S?ï¿½balo	Panama	SAX		8.017	-78.2	32	-5	U	America/Panama
 Bocas Del Toro Intl	Bocas Del Toro	Panama	BOC	MPBO	9.340853	-82.250842	10	-5	U	America/Panama
 Cap Manuel Nino Intl	Changuinola	Panama	CHX	MPCH	9.458636	-82.516806	19	-5	U	America/Panama
-Alonso Valderrama Airport	Chitr?®	Panama	CTD	MPCE	7.98784	-80.4097	33	-5	U	America/Panama
+Alonso Valderrama Airport	Chitr?ï¿½	Panama	CTD	MPCE	7.98784	-80.4097	33	-5	U	America/Panama
 Enrique Adolfo Jimenez Airport	Col??n	Panama	ONX	MPEJ	9.35664	-79.8674	25	-5	U	America/Panama
 Contadora Airport	Contadora Island	Panama	OTD		8.62876	-79.0347	14	-5	U	America/Panama
 Enrique Malek Intl	David	Panama	DAV	MPDA	8.391003	-82.434992	89	-5	U	America/Panama
@@ -4560,7 +4560,7 @@ EL Real Airport	El Real	Panama	ELE		8.133	-77.7	57	-5	U	America/Panama
 Garachine Airport	Garachine	Panama	GHE	\N	8.06	-78.36	0	-5	U	America/Panama
 Howard	Howard	Panama	HOW	MPHO	8.914794	-79.599633	52	-5	U	America/Panama
 Isla San Jose	Isla San Jose	Panama		\N	8.252	-79.0668	150	-5	N	America/Panama
-Jaqu?® Airport	Jaqu?®	Panama	JQE	MPJE	7.51778	-78.1572	29	-5	U	America/Panama
+Jaqu?ï¿½ Airport	Jaqu?ï¿½	Panama	JQE	MPJE	7.51778	-78.1572	29	-5	U	America/Panama
 Captain Ramon Xatruch Airport	La Palma	Panama	PLP	MPLP	8.40667	-78.1417	30	-5	U	America/Panama
 Mamitupo	Mamitupo	Panama	MPU	\N	9.186667	-77.984167	10	-5	U	America/Panama
 Mulatupo Airport	Mulatupo	Panama	MPP	\N	8.95	-77.75	0	-5	U	America/Panama
@@ -4652,7 +4652,7 @@ Teniente Jaime A De Montreuil Morales	Chimbote	Peru	CHM	SPEO	-9.149614	-78.52385
 Collique	Collique	Peru		SPOL	-11.9287	-77.061139	410	-5	U	America/Lima
 Poroy Train Station	Cusco	Peru		\N	-13.4944	-72.0421	11710	-5	N	America/Lima
 Teniente Alejandro Velasco Astete Intl	Cuzco	Peru	CUZ	SPZO	-13.535722	-71.938781	10860	-5	U	America/Lima
-Alferez Fap David Figueroa Fernandini Airport	Hu?ínuco	Peru	HUU	SPNC	-9.878811	-76.204797	6070	-5	U	America/Lima
+Alferez Fap David Figueroa Fernandini Airport	Hu?ï¿½nuco	Peru	HUU	SPNC	-9.878811	-76.204797	6070	-5	U	America/Lima
 Huancabamba	Huancabamba	Peru		SPAB	-5.256767	-79.442856	6312	-5	U	America/Lima
 Iberia	Iberia	Peru		SPBR	-11.411578	-69.488711	750	-5	U	America/Lima
 Ilo	Ilo	Peru		SPLO	-17.695036	-71.343964	72	-5	U	America/Lima
@@ -4758,7 +4758,7 @@ Koszalin - Zegrze Pomorskie Airport	Koszalin	Poland	OSZ	EPKO	54.041	16.266	111	1
 Balice	Krakow	Poland	KRK	EPKK	50.077731	19.784836	791	1	E	Europe/Warsaw
 Krakow Glowny	Krakow	Poland		\N	50.065556	19.947222	719	1	E	Europe/Warsaw
 Lask	Lask	Poland		EPLK	51.551667	19.179058	633	1	E	Europe/Warsaw
-?ü??d?? W?éadys?éaw Reymont Airport	Lodz	Poland	LCJ	EPLL	51.721881	19.398133	604	1	E	Europe/Warsaw
+?ï¿½??d?? W?ï¿½adys?ï¿½aw Reymont Airport	Lodz	Poland	LCJ	EPLL	51.721881	19.398133	604	1	E	Europe/Warsaw
 Lublin	Lublin	Poland	LUZ	EPLB	51.239333	22.714083	203	1	E	Europe/Warsaw
 Malbork	Malbork	Poland		EPMB	54.026944	19.134167	16	1	E	Europe/Warsaw
 Mielec	Mielec	Poland		EPML	50.322275	21.462131	548	1	E	Europe/Warsaw
@@ -5223,7 +5223,7 @@ Changi Intl	Singapore	Singapore	SIN	WSSS	1.350189	103.994433	22	8	N	Asia/Singapo
 Seletar	Singapore	Singapore	XSP	WSSL	1.41695	103.867653	36	8	N	Asia/Singapore
 Singapore Cruise Terminal	Singapore	Singapore		\N	1.264185	103.819821	0	8	N	Asia/Singapore
 Tengah	Tengah	Singapore		WSAT	1.387258	103.708719	50	8	N	Asia/Singapore
-?¢ilina Airport	?¢ilina	Slovakia	ILZ	LZZI	49.231528	18.6135	1020	1	E	Europe/Bratislava
+?ï¿½ilina Airport	?ï¿½ilina	Slovakia	ILZ	LZZI	49.231528	18.6135	1020	1	E	Europe/Bratislava
 M R Stefanik	Bratislava	Slovakia	BTS	LZIB	48.170167	17.212667	436	1	E	Europe/Bratislava
 Bratislava hl. st.	Bratislava	Slovakia		\N	-48.158263	17.105839	430	1	E	\N
 Bratislava Hlavna Stanica	Bratislava	Slovakia		\N	48.08	17.06	1	1	E	Europe/Vienna
@@ -5559,8 +5559,8 @@ Ny-Alesund Airport	Ny-Alesund	Svalbard		ENAS	78.9275	11.874167	50	1	U	Arctic/Lon
 Piramida	Piramida	Svalbard		\N	78.6528	16.3392	20	1	U	Arctic/Longyearbyen
 Svea Airport	Sveagruva	Svalbard		ENSA	77.9	16.683333	29	1	U	Arctic/Longyearbyen
 Matsapha	Manzini	Swaziland	MTS	FDMS	-26.529022	31.307519	2075	2	U	Africa/Mbabane
-?ängelholm-Helsingborg Airport	?ängelholm	Sweden	AGH	ESTA	56.2961	12.8471	68	1	E	Europe/Stockholm
-?ûstersund Airport	?ûstersund	Sweden	OSD	ESNZ	63.1944	14.5003	1233	1	E	Europe/Stockholm
+?ï¿½ngelholm-Helsingborg Airport	?ï¿½ngelholm	Sweden	AGH	ESTA	56.2961	12.8471	68	1	E	Europe/Stockholm
+?ï¿½stersund Airport	?ï¿½stersund	Sweden	OSD	ESNZ	63.1944	14.5003	1233	1	E	Europe/Stockholm
 Station Aare	Aare	Sweden		\N	63.398779	13.075956	1240	1	E	Europe/Stockholm
 Anderstorp	Anderstorp	Sweden		ESMP	57.264167	13.599439	507	1	E	Europe/Stockholm
 Arboga	Arboga	Sweden		ESQO	59.386585	15.924055	33	1	E	Europe/Stockholm
@@ -5849,7 +5849,7 @@ Thyna	Sfax	Tunisia	SFA	DTTX	34.717953	10.690972	85	1	E	Africa/Tunis
 7 Novembre	Tabarka	Tunisia	TBJ	DTKA	36.978333	8.876389	0	1	E	Africa/Tunis
 Nefta	Tozeur	Tunisia	TOE	DTTZ	33.939722	8.110556	287	1	E	Africa/Tunis
 Carthage	Tunis	Tunisia	TUN	DTTA	36.851033	10.227217	22	1	E	Africa/Tunis
-Tekirda?ƒ ?çorlu Airport	?çorlu	Turkey	TEQ	LTBU	41.13825	27.919094	574	2	E	Europe/Istanbul
+Tekirda?ï¿½ ?ï¿½orlu Airport	?ï¿½orlu	Turkey	TEQ	LTBU	41.13825	27.919094	574	2	E	Europe/Istanbul
 Adana	Adana	Turkey	ADA	LTAF	36.982166	35.280388	65	2	E	Europe/Istanbul
 Adana-Incirlik Airbase	Adana	Turkey	UAB	KUAB	37.00028	35.41833	500	2	E	Europe/Istanbul
 Incirlik Ab	Adana	Turkey		LTAG	37.0021	35.425894	238	2	E	Europe/Istanbul
@@ -5910,7 +5910,7 @@ Merzifon	Merzifon	Turkey	MZH	LTAP	40.829375	35.521992	1758	2	E	Europe/Istanbul
 Mus Airport	Mus	Turkey	MSR	LTCK	38.747769	41.661236	4157	2	E	Europe/Istanbul
 Kapadokya	Nevsehir	Turkey	NAV	LTAZ	38.771867	34.53455	3100	2	E	Europe/Istanbul
 Samsun 	Samsun	Turkey	SSX	\N	41.1641	36.1814	521	2	U	Europe/Istanbul
-Samsun-?çar?ƒamba Airport	Samsun	Turkey	SZF	LTFH	41.2545	36.5671	18	2	E	Europe/Istanbul
+Samsun-?ï¿½ar?ï¿½amba Airport	Samsun	Turkey	SZF	LTFH	41.2545	36.5671	18	2	E	Europe/Istanbul
 Sanliurfa GAP	Sanliurfa	Turkey	GNY	LTCS	37.45	38.9	2700	2	E	Europe/Istanbul
 Sanliurfa Airport	Sanliurfa	Turkey	SFQ	LTCH	37.094261	38.847103	1483	2	E	Europe/Istanbul
 Siirt	Siirt	Turkey		LTCL	37.978886	41.840436	2001	2	E	Europe/Istanbul
@@ -7935,7 +7935,7 @@ Termez Airport	Termez	Uzbekistan	TMJ	UTST	37.286667	67.31	1027	5	U	Asia/Samarkan
 Urgench Airport	Urgench	Uzbekistan	UGC	UTNU	41.5843	60.6417	320	5	U	Asia/Samarkand
 Sugraly Airport	Zarafshan	Uzbekistan	AFS	UTSN	41.6139	64.2332	1396	5	U	Asia/Samarkand
 Mota Lava Airport	Ablow	Vanuatu	MTV	NVSA	-13.666	167.712	63	11	U	Pacific/Efate
-Ul?®i Airport	Ambryn Island	Vanuatu	ULB	NVSU	-16.333	168.283	0	11	U	Pacific/Efate
+Ul?ï¿½i Airport	Ambryn Island	Vanuatu	ULB	NVSU	-16.333	168.283	0	11	U	Pacific/Efate
 Anelghowhat Airport	Anelghowhat	Vanuatu	AUY	NVVA	-20.2492	169.771	7	11	U	Pacific/Efate
 Aniwa Airport	Aniwa	Vanuatu	AWD	NVVB	-19.24	169.605	69	11	U	Pacific/Efate
 Craig Cove Airport	Craig Cove	Vanuatu	CCV	NVSF	-16.265	167.924	69	11	U	Pacific/Efate
@@ -7982,7 +7982,7 @@ General Manuel Carlos Piar	Ciudad Guayana	Venezuela	CGU	\N	8.288527	-62.760361	4
 Jose Leonardo Chirinos	Coro	Venezuela	CZE	SVCR	11.414867	-69.681656	52	-4.5	U	America/Caracas
 Antonio Jose De Sucre	Cumana	Venezuela	CUM	SVCU	10.450333	-64.130472	25	-4.5	U	America/Caracas
 El Dorado	El Dorado	Venezuela		SVED	6.715438	-61.639219	318	-4.5	U	America/Caracas
-Juan Pablo P?®rez Alfonso Airport	El Vig?¡a	Venezuela	VIG	SVVG	8.6241	-71.672819	250	-4.5	U	America/Caracas
+Juan Pablo P?ï¿½rez Alfonso Airport	El Vig?ï¿½a	Venezuela	VIG	SVVG	8.6241	-71.672819	250	-4.5	U	America/Caracas
 Elorza	Elorza	Venezuela		SVEZ	7.059722	-69.496694	295	-4.5	U	America/Caracas
 Guanare	Guanare	Venezuela	GUQ	SVGU	9.026944	-69.75515	606	-4.5	U	America/Caracas
 Guasdualito	Guasdualito	Venezuela		SVGD	7.211081	-70.75645	426	-4.5	U	America/Caracas
@@ -8023,7 +8023,7 @@ Dr Antonio Nicolas Briceno	Valera	Venezuela	VLV	SVVL	9.340797	-70.584089	1893	-4
 Valle De La Pascua	Valle De La Pascua	Venezuela	VDP	SVVP	9.222028	-65.993583	410	-4.5	U	America/Caracas
 Buon Ma Thuot Airport	Buonmethuot	Vietnam	BMV	VVBM	12.668311	108.120272	1729	7	U	Asia/Saigon
 Ca Mau	Ca Mau	Vietnam	CAH	VVCM	9.188049	105.174721	50	7	U	Asia/Saigon
-Tr?á N??c Airport	Can Tho	Vietnam	VCA	VVCT	10.085119	105.711922	9	7	U	Asia/Saigon
+Tr?ï¿½ N??c Airport	Can Tho	Vietnam	VCA	VVCT	10.085119	105.711922	9	7	U	Asia/Saigon
 Chu Lai	Chu Lai	Vietnam	VCL	VVCA	15.405944	108.705889	10	7	U	Asia/Saigon
 Co Ong Airport	Conson	Vietnam	VCS	VVCS	8.731831	106.632589	20	7	U	Asia/Saigon
 Dalat	Dalat	Vietnam	DLI	VVDL	11.75	108.367	3156	7	U	Asia/Saigon
