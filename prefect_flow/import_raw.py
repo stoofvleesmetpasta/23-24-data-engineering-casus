@@ -2,9 +2,6 @@ from sqlalchemy import create_engine, types as sqlalchemytypes
 import pandas as pd
 from prefect import task, flow
 
-
-
-
 tables = {
     'aankomst': './source_data/export_aankomst.txt',
     'banen': './source_data/export_banen.csv',
@@ -18,8 +15,6 @@ tables = {
     'vlucht': './source_data/export_vlucht.txt',
     'weer': './source_data/export_weer.txt'
 }
-
-
 
 
 @task

@@ -194,7 +194,7 @@ def data_cleaning():
         df_clean = clean_data(df_raw, table_name, column_types_cleansed)
         df_clean.columns = df_clean.columns.str.lower()
         archive_deleted_and_upload_clean(engine, df_raw, df_clean, table_name, column_types_cleansed)
-
+        
     print("Data cleaning and import complete.")
 
 
