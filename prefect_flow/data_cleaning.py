@@ -7,18 +7,20 @@ import psycopg2
 
 @task
 def data_cleaning():
-    # Initialize variables
-    aankomst_df = pd.DataFrame()
-    banen_df = pd.DataFrame()
-    klant_df = pd.DataFrame()
-    luchthavens_df = pd.DataFrame()
-    maatschappijen_df = pd.DataFrame()
-    planning_df = pd.DataFrame()
-    vertrek_df = pd.DataFrame()
-    vliegtuig_df = pd.DataFrame()
-    vliegtuigtype_df = pd.DataFrame()
-    vlucht_df = pd.DataFrame()
-    weer_df = pd.DataFrame()
+    # Initialize dictionaries to hold DataFrames
+    df_dict = {
+        'aankomst': None,
+        'banen': None,
+        'klant': None,
+        'luchthavens': None,
+        'maatschappijen': None,
+        'planning': None,
+        'vertrek': None,
+        'vliegtuig': None,
+        'vliegtuigtype': None,
+        'vlucht': None,
+        'weer': None,
+    }
 
     tables_raw = []
     tables_clean = []
@@ -155,20 +157,19 @@ def data_cleaning():
     inspector = inspect(engine)
     tables = inspector.get_table_names(schema='raw')
 
-    # Load each table into a DataFrame and assign it to a variable
-    for table in tables:
-        df = pd.read_sql_table(table, con=engine, schema='raw')
+    # Load each table into a DataFrame and assign it to the corresponding key in the dictionary
+    for table_name in df_dict.keys():
+        df = pd.read_sql_table(table_name, con=engine, schema='raw')
         df.columns = df.columns.str.lower()
-        globals()[f'{table}_df'] = df
+        df_dict[table_name] = df
         tables_raw.append(df)
 
     special_char_pattern = re.compile(r'[^a-zA-Z0-9\s]')
 
-    for df, table in zip([aankomst_df, banen_df, klant_df, luchthavens_df, maatschappijen_df, planning_df, vertrek_df, vliegtuig_df, vliegtuigtype_df, vlucht_df, weer_df], 
-                         ['aankomst', 'banen', 'klant', 'luchthavens', 'maatschappijen', 'planning', 'vertrek', 'vliegtuig', 'vliegtuigtype', 'vlucht', 'weer']):
+    for table_name, df in df_dict.items():
         df.dropna(how='all', inplace=True)
         df.drop_duplicates(inplace=True)
-        
+
         if 'aankomsttijd' in df.columns:
             df['aankomsttijd'] = pd.to_datetime(df['aankomsttijd'], errors='coerce')
             df = df[df['aankomsttijd'].notnull()]
@@ -186,7 +187,7 @@ def data_cleaning():
             df.loc[df['vracht'].isnull() & df['bezetting'].notnull(), 'vracht'] = 0
             df = df.dropna(subset=['bezetting', 'vracht'], how='all')
 
-        if table == 'maatschappijen' or table == 'vliegtuig':
+        if table_name == 'maatschappijen' or table_name == 'vliegtuig':
             columns_to_check = df.columns[df.columns != 'name']
             df = df[~df[columns_to_check].apply(lambda row: row.astype(str).str.contains(special_char_pattern).any(), axis=1)]
 
@@ -199,16 +200,17 @@ def data_cleaning():
         if 'cat' in df.columns:
             df = df[df['cat'].notnull()]
 
-        if table == 'vliegtuigtype':
+        if table_name == 'vliegtuigtype':
             df = df.dropna(thresh=df.shape[1]-1)
 
         tables_clean.append(df)
-        df.to_sql(table, con=engine, schema='cleansed', if_exists='append', index=False, dtype=column_types_cleansed[table])
+        df.to_sql(table_name, con=engine, schema='cleansed', if_exists='append', index=False, dtype=column_types_cleansed[table_name])
 
-    for df_raw, df_clean, table in zip(tables_raw, tables_clean, ['aankomst', 'banen', 'klant', 'luchthavens', 'maatschappijen', 'planning', 'vertrek', 'vliegtuig', 'vliegtuigtype', 'vlucht', 'weer']):
+    for df_raw, df_clean, table_name in zip(tables_raw, tables_clean, df_dict.keys()):
         deleted_indices = df_raw.index.difference(df_clean.index)
         deleted_records = df_raw.loc[deleted_indices]
-        deleted_records_filtered = deleted_records[[col for col in deleted_records.columns if col in column_types_cleansed[table]]]
-        deleted_records_filtered.to_sql(table, con=engine, schema='archived', if_exists='append', index=False, dtype=column_types_cleansed[table])
-    
+        deleted_records_filtered = deleted_records[[col for col in deleted_records.columns if col in column_types_cleansed[table_name]]]
+        deleted_records_filtered.to_sql(table_name, con=engine, schema='archived', if_exists='append', index=False, dtype=column_types_cleansed[table_name])
+
     print("Data cleaning and import complete.")
+
