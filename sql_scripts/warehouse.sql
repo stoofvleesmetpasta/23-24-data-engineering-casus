@@ -1,102 +1,100 @@
-
-
 -- Maatschappijen
 CREATE TABLE Maatschappijen (
-    MaatschappijID SERIAL PRIMARY KEY,
-    Naam VARCHAR(100) NOT NULL,
-    IATA VARCHAR(3),
-    ICAO VARCHAR(3)
+    "maatschappijid" SERIAL PRIMARY KEY,
+    "naam" VARCHAR(100) NOT NULL,
+    "iata" VARCHAR(3),
+    "icao" VARCHAR(3)
 );
 
 -- Vliegtuigen
 CREATE TABLE Vliegtuigen (
-    VliegtuigID SERIAL PRIMARY KEY,
-    MaatschappijID INT REFERENCES Maatschappijen(MaatschappijID),
-    Type VARCHAR(50) NOT NULL,
-    Bouwjaar INT
+    "vliegtuigid" SERIAL PRIMARY KEY,
+    "maatschappijid" INT REFERENCES Maatschappijen("maatschappijid"),
+    "type" VARCHAR(50) NOT NULL,
+    "bouwjaar" INT
 );
 
 -- Planning
 CREATE TABLE Planning (
-    PlanningID SERIAL PRIMARY KEY,
-    Vluchtnummer VARCHAR(10) NOT NULL,
-    MaatschappijID INT REFERENCES Maatschappijen(MaatschappijID),
-    Bestemming VARCHAR(3) NOT NULL,
-    Terminal VARCHAR(5),
-    Gate VARCHAR(5),
-    Tijd TIMESTAMP
+    "planningid" SERIAL PRIMARY KEY,
+    "vluchtnummer" VARCHAR(10) NOT NULL,
+    "maatschappijid" INT REFERENCES Maatschappijen("maatschappijid"),
+    "bestemming" VARCHAR(3) NOT NULL,
+    "terminal" VARCHAR(5),
+    "gate" VARCHAR(5),
+    "tijd" TIMESTAMP
 );
 
 -- Vlucht
 CREATE TABLE Vlucht (
-    VluchtID SERIAL PRIMARY KEY,
-    PlanningID INT REFERENCES Planning(PlanningID),
-    VliegtuigID INT REFERENCES Vliegtuigen(VliegtuigID),
-    Datum DATE
+    "vluchtid" SERIAL PRIMARY KEY,
+    "planningid" INT REFERENCES Planning("planningid"),
+    "vliegtuigid" INT REFERENCES Vliegtuigen("vliegtuigid"),
+    "datum" DATE
 );
 
 -- Weer
 CREATE TABLE Weer (
-    WeerID SERIAL PRIMARY KEY,
-    Datum DATE,
-    Windrichting DECIMAL(5,2),
-    Windsnelheid DECIMAL(5,2),
-    Temperatuur DECIMAL(5,2),
-    Neerslag DECIMAL(5,2),
-    Luchtdruk DECIMAL(5,2)
+    "weerid" SERIAL PRIMARY KEY,
+    "datum" DATE,
+    "windrichting" DECIMAL(5,2),
+    "windsnelheid" DECIMAL(5,2),
+    "temperatuur" DECIMAL(5,2),
+    "neerslag" DECIMAL(5,2),
+    "luchtdruk" DECIMAL(5,2)
 );
 
 -- Luchthavens
 CREATE TABLE Luchthavens (
-    LuchthavenID SERIAL PRIMARY KEY,
-    Naam VARCHAR(100) NOT NULL,
-    IATA VARCHAR(3),
-    ICAO VARCHAR(4),
-    Land VARCHAR(50),
-    Stad VARCHAR(50),
-    Lat DECIMAL(9,6),
-    Lon DECIMAL(9,6),
-    Alt INT,
-    TZ VARCHAR(10),
-    DST CHAR(1),
-    TZName VARCHAR(50)
+    "luchthavenid" SERIAL PRIMARY KEY,
+    "naam" VARCHAR(100) NOT NULL,
+    "iata" VARCHAR(3),
+    "icao" VARCHAR(4),
+    "land" VARCHAR(50),
+    "stad" VARCHAR(50),
+    "lat" DECIMAL(9,6),
+    "lon" DECIMAL(9,6),
+    "alt" INT,
+    "tz" VARCHAR(10),
+    "dst" CHAR(1),
+    "tzname" VARCHAR(50)
 );
 
 -- Banen
 CREATE TABLE Banen (
-    BaanID SERIAL PRIMARY KEY,
-    LuchthavenID INT REFERENCES Luchthavens(LuchthavenID),
-    Nummer VARCHAR(1) NOT NULL,
-    Code VARCHAR(7),
-    Naam VARCHAR(100),
-    Lengte INT
+    "baanid" SERIAL PRIMARY KEY,
+    "luchthavenid" INT REFERENCES Luchthavens("luchthavenid"),
+    "nummer" VARCHAR(1) NOT NULL,
+    "code" VARCHAR(7),
+    "naam" VARCHAR(100),
+    "lengte" INT
 );
 
 -- Aankomst
 CREATE TABLE Aankomst (
-    AankomstID SERIAL PRIMARY KEY,
-    VluchtID INT REFERENCES Vlucht(VluchtID),
-    BaanID INT REFERENCES Banen(BaanID),
-    Bezetting INT,
-    Vracht INT,
-    AankomstTijd TIMESTAMP
+    "aankomstid" SERIAL PRIMARY KEY,
+    "vluchtid" INT REFERENCES Vlucht("vluchtid"),
+    "baanid" INT REFERENCES Banen("baanid"),
+    "bezetting" INT,
+    "vracht" INT,
+    "aankomsttijd" TIMESTAMP
 );
 
 -- Vertrek
 CREATE TABLE Vertrek (
-    VertrekID SERIAL PRIMARY KEY,
-    VluchtID INT REFERENCES Vlucht(VluchtID),
-    BaanID INT REFERENCES Banen(BaanID),
-    Bezetting INT,
-    Vracht INT,
-    VertrekTijd TIMESTAMP
+    "vertrekid" SERIAL PRIMARY KEY,
+    "vluchtid" INT REFERENCES Vlucht("vluchtid"),
+    "baanid" INT REFERENCES Banen("baanid"),
+    "bezetting" INT,
+    "vracht" INT,
+    "vertrektijd" TIMESTAMP
 );
 
 -- Klant
 CREATE TABLE Klant (
-    KlantID SERIAL PRIMARY KEY,
-    VluchtID INT REFERENCES Vlucht(VluchtID),
-    Operatie DECIMAL(5,2),
-    Faciliteiten DECIMAL(5,2),
-    Shops DECIMAL(5,2)
+    "klantid" SERIAL PRIMARY KEY,
+    "vluchtid" INT REFERENCES Vlucht("vluchtid"),
+    "operatie" DECIMAL(5,2),
+    "faciliteiten" DECIMAL(5,2),
+    "shops" DECIMAL(5,2)
 );
