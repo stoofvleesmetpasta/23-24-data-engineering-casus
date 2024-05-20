@@ -105,7 +105,7 @@ CREATE TABLE archived.weer (
     "fhx" VARCHAR(3),        -- Maximale uurgemiddelde windsnelheid (in 0.1 m/s)
     "fhxh" VARCHAR(2),       -- Uurvak van maximale uurgemiddelde windsnelheid
     "fhn" VARCHAR(3),        -- Minimale uurgemiddelde windsnelheid (in 0.1 m/s)
-    "fhnH" VARCHAR(2),       -- Uurvak van minimale uurgemiddelde windsnelheid
+    "fhnh" VARCHAR(2),       -- Uurvak van minimale uurgemiddelde windsnelheid
     "fxx" VARCHAR(3),        -- Maximale windstoot (in 0.1 m/s)
     "fxxh" VARCHAR(2),       -- Uurvak van maximale windstoot
     "tg" VARCHAR(4),         -- Daggemiddelde temperatuur (in 0.1 graden Celsius)
@@ -128,7 +128,7 @@ CREATE TABLE archived.weer (
     "pn" VARCHAR(5),         -- Minimum luchtdruk (in 0.1 hPa)
     "pnh" VARCHAR(2),        -- Uurvak van minimum luchtdruk
     "vvn" VARCHAR(3),        -- Minimum zicht
-    "vvnH" VARCHAR(2),       -- Uurvak van minimum zicht
+    "vvnh" VARCHAR(2),       -- Uurvak van minimum zicht
     "vvx" VARCHAR(3),        -- Maximum zicht
     "vvxh" VARCHAR(2),       -- Uurvak van maximum zicht
     "ng" VARCHAR(2),         -- Gemiddelde bewolking (in achtsten, van 0 tot 9)
