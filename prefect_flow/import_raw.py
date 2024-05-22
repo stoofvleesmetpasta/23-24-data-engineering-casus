@@ -160,7 +160,7 @@ def import_raw():
         "EV2": sqlalchemytypes.String,
     }
 }
-    engine = create_engine('postgresql://postgres:Newpassword@192.168.56.1:5433/postgres')
+    engine = create_engine('postgresql://postgres:Newpassword@192.168.1.18:5433/postgres')
 
     for table, file_path in tables.items():
         load_data_to_db(table, file_path, engine, column_types_raw)

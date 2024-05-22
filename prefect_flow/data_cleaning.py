@@ -39,6 +39,8 @@ def clean_data(df, table_name, column_types):
 
     if 'iata' in df.columns:
         df = df[df['iata'].notnull()]
+        df = df[df['iata'].str.match(r'^[a-zA-Z0-9]*$')]
+        df['iata'] = df['iata'].astype(str).str.slice(0, 5)
 
     if 'cat' in df.columns:
         df = df[df['cat'].notnull()]
@@ -58,7 +60,7 @@ def archive_deleted_and_upload_clean(engine, df_raw, df_clean, table_name, colum
 
 @flow
 def data_cleaning():
-    engine = create_engine('postgresql://postgres:Newpassword@192.168.56.1:5433/postgres')
+    engine = create_engine('postgresql://postgres:Newpassword@192.168.1.18:5433/postgres')
     inspector = inspect(engine)
     table_names = inspector.get_table_names(schema='raw')
 
@@ -109,7 +111,7 @@ def data_cleaning():
             "destcode": sqlalchemytypes.String,
             "planterminal": sqlalchemytypes.String,
             "plangate": sqlalchemytypes.String,
-            "plantijd": sqlalchemytypes.TIME,
+            "plantijd": sqlalchemytypes.Time,
         },
         'vertrek': {
             "vluchtid": sqlalchemytypes.String,
@@ -119,13 +121,13 @@ def data_cleaning():
             "baan": sqlalchemytypes.String,
             "bezetting": sqlalchemytypes.SmallInteger,
             "vracht": sqlalchemytypes.String,
-            "vertrektijd": sqlalchemytypes.TIME,
+            "vertrektijd": sqlalchemytypes.TIMESTAMP,
         },
         'vliegtuig': {
             "airlinecode": sqlalchemytypes.String,
             "vliegtuigcode": sqlalchemytypes.String,
             "vliegtuigtype": sqlalchemytypes.String,
-            "bouwjaar": sqlalchemytypes.String,
+            "bouwjaar": sqlalchemytypes.Integer,
         },
         'vliegtuigtype': {
             "iata": sqlalchemytypes.String,
@@ -134,65 +136,65 @@ def data_cleaning():
             "type": sqlalchemytypes.String,
             "wake": sqlalchemytypes.String,
             "cat": sqlalchemytypes.String,
-            "capaciteit": sqlalchemytypes.String,
-            "vracht": sqlalchemytypes.String,
+            "capaciteit": sqlalchemytypes.Integer,
+            "vracht": sqlalchemytypes.Integer,
         },
         'vlucht': {
-            "vluchtid": sqlalchemytypes.String,
+            "vluchtid": sqlalchemytypes.Integer,
             "vluchtnr": sqlalchemytypes.String,
             "airlinecode": sqlalchemytypes.String,
             "destcode": sqlalchemytypes.String,
             "vliegtuigcode": sqlalchemytypes.String,
-            "datum": sqlalchemytypes.String,
+            "datum": sqlalchemytypes.Date,
         },
         'weer': {
-            "datum": sqlalchemytypes.String,
-            "ddvec": sqlalchemytypes.String,
-            "fhvec": sqlalchemytypes.String,
-            "fg": sqlalchemytypes.String,
-            "fhx": sqlalchemytypes.String,
-            "fhxh": sqlalchemytypes.String,
-            "fhn": sqlalchemytypes.String,
-            "fhnh": sqlalchemytypes.String,
-            "fxx": sqlalchemytypes.String,
-            "fxxh": sqlalchemytypes.String,
-            "tg": sqlalchemytypes.String,
-            "tn": sqlalchemytypes.String,
-            "tnh": sqlalchemytypes.String,
-            "tx": sqlalchemytypes.String,
-            "txh": sqlalchemytypes.String,
-            "t10n": sqlalchemytypes.String,
-            "t10nh": sqlalchemytypes.String,
-            "sq": sqlalchemytypes.String,
-            "sp": sqlalchemytypes.String,
-            "q": sqlalchemytypes.String,
-            "dr": sqlalchemytypes.String,
-            "rh": sqlalchemytypes.String,
-            "rhx": sqlalchemytypes.String,
-            "rhxh": sqlalchemytypes.String,
-            "pg": sqlalchemytypes.String,
-            "px": sqlalchemytypes.String,
-            "pxh": sqlalchemytypes.String,
-            "pn": sqlalchemytypes.String,
-            "pnh": sqlalchemytypes.String,
-            "vvn": sqlalchemytypes.String,
-            "vvnh": sqlalchemytypes.String,
-            "vvx": sqlalchemytypes.String,
-            "vvxh": sqlalchemytypes.String,
-            "ng": sqlalchemytypes.String,
-            "ug": sqlalchemytypes.String,
-            "ux": sqlalchemytypes.String,
-            "uxh": sqlalchemytypes.String,
-            "un": sqlalchemytypes.String,
-            "unh": sqlalchemytypes.String,
-            "ev2": sqlalchemytypes.String,
+            "datum": sqlalchemytypes.Date,
+            "ddvec": sqlalchemytypes.Integer,
+            "fhvec": sqlalchemytypes.Integer,
+            "fg": sqlalchemytypes.Integer,
+            "fhx": sqlalchemytypes.Integer,
+            "fhxh": sqlalchemytypes.Integer,
+            "fhn": sqlalchemytypes.Integer,
+            "fhnh": sqlalchemytypes.Integer,
+            "fxx": sqlalchemytypes.Integer,
+            "fxxh": sqlalchemytypes.Integer,
+            "tg": sqlalchemytypes.Integer,
+            "tn": sqlalchemytypes.Integer,
+            "tnh": sqlalchemytypes.Integer,
+            "tx": sqlalchemytypes.Integer,
+            "txh": sqlalchemytypes.Integer,
+            "t10n": sqlalchemytypes.Integer,
+            "t10nh": sqlalchemytypes.Integer,
+            "sq": sqlalchemytypes.Integer,
+            "sp": sqlalchemytypes.Integer,
+            "q": sqlalchemytypes.Integer,
+            "dr": sqlalchemytypes.Integer,
+            "rh": sqlalchemytypes.Integer,
+            "rhx": sqlalchemytypes.Integer,
+            "rhxh": sqlalchemytypes.Integer,
+            "pg": sqlalchemytypes.Integer,
+            "px": sqlalchemytypes.Integer,
+            "pxh": sqlalchemytypes.Integer,
+            "pn": sqlalchemytypes.Integer,
+            "pnh": sqlalchemytypes.Integer,
+            "vvn": sqlalchemytypes.Integer,
+            "vvnh": sqlalchemytypes.Integer,
+            "vvx": sqlalchemytypes.Integer,
+            "vvxh": sqlalchemytypes.Integer,
+            "ng": sqlalchemytypes.Integer,
+            "ug": sqlalchemytypes.Integer,
+            "ux": sqlalchemytypes.Integer,
+            "uxh": sqlalchemytypes.Integer,
+            "un": sqlalchemytypes.Integer,
+            "unh": sqlalchemytypes.Integer,
+            "ev2": sqlalchemytypes.Integer,
         }
     }
 
     for table_name in table_names:
         df_raw = pd.read_sql_table(table_name, con=engine, schema='raw')
+        df_raw.columns = df_raw.columns.str.lower()
         df_clean = clean_data(df_raw, table_name, column_types_cleansed)
-        df_clean.columns = df_clean.columns.str.lower()
         archive_deleted_and_upload_clean(engine, df_raw, df_clean, table_name, column_types_cleansed)
         
     print("Data cleaning and import complete.")

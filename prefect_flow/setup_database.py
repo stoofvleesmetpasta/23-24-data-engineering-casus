@@ -4,7 +4,7 @@ from prefect import task, flow
 @task
 def connect_to_db():
     conn = psycopg2.connect(
-        host="192.168.56.1",
+        host="192.168.1.18",
         dbname="postgres",
         user="postgres",
         password="Newpassword",
@@ -29,7 +29,7 @@ def close_db_connection(conn):
 def connect_and_setup():
     conn = connect_to_db()
     
-    sql_files = ['./sql_scripts/raw.sql', './sql_scripts/archived.sql', './sql_scripts/cleansed.sql', '.sql_scripts/wareahouse.sql']
+    sql_files = ['./sql_scripts/raw.sql', './sql_scripts/archived.sql', './sql_scripts/cleansed.sql', './sql_scripts/warehouse.sql']
     for sql_file in sql_files:
         execute_sql_script(conn, sql_file)
     

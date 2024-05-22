@@ -66,3 +66,75 @@ CREATE TABLE cleansed.vertrek (
     "vracht" VARCHAR(5),         -- Behoud van CHAR, hoewel lijkt dat er vaak geen data is
     "vertrektijd" TIMESTAMP      -- TIMESTAMP voor exacte datum en tijd opslag
 );
+
+CREATE TABLE cleansed.vliegtuig (
+    "airlinecode" CHAR(3),
+    "vliegtuigcode" VARCHAR(8),
+    "vliegtuigtype" CHAR(3),
+    "bouwjaar" INT       
+);
+
+CREATE TABLE cleansed.vliegtuigtype (
+    "iata" VARCHAR(10),
+    "icao" VARCHAR(10),
+    "merk" VARCHAR(40),
+    "type" VARCHAR(80),
+    "wake" CHAR(1),
+    "cat" CHAR(10),
+    "capaciteit" INT,
+    "vracht" INT    
+);
+
+CREATE TABLE cleansed.vlucht (
+    "vluchtid" INT,
+    "vluchtnr" VARCHAR(10),
+    "airlinecode" CHAR(3),
+    "destcode" CHAR(3),
+    "vliegtuigcode" VARCHAR(10),
+    "datum" DATE          
+);
+
+CREATE TABLE cleansed.weer (
+    "datum" DATE,
+    "ddvec" INT,
+    "fhvec" INT,
+    "fg" INT,
+    "fhx" INT,
+    "fhxh" INT,
+    "fhn" INT,
+    "fhnh" INT,
+    "fxx" INT,
+    "fxxh" INT,
+    "tg" INT,
+    "tn" INT,
+    "tnh" INT,
+    "tx" INT,
+    "txh" INT,
+    "t10n" INT,
+    "t10nh" INT,
+    "sq" INT,
+    "sp" INT,
+    "q" INT,
+    "dr" INT,
+    "rh" INT,
+    "rhx" INT,
+    "rhxh" INT,
+    "pg" INT,
+    "px" INT,
+    "pxh" INT,
+    "pn" INT,
+    "pnh" INT,
+    "vvn" INT,
+    "vvnh" INT,
+    "vvx" INT,
+    "vvxh" INT,
+    "ng" INT,
+    "ug" INT,
+    "ux" INT,
+    "uxh" INT,
+    "un" INT,
+    "unh" INT,
+    "ev2" INT      -- Potentiële verdamping (in 0.1 mm)
+);
+
+

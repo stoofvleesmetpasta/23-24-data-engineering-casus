@@ -1,100 +1,111 @@
--- Maatschappijen
-CREATE TABLE Maatschappijen (
-    "maatschappijid" SERIAL PRIMARY KEY,
-    "naam" VARCHAR(100) NOT NULL,
-    "iata" VARCHAR(3),
-    "icao" VARCHAR(3)
+-- Create schema
+CREATE SCHEMA warehouse;
+
+DROP TABLE IF EXISTS warehouse.vliegtuig_dim, warehouse.luchtvaartmaatschappijen_dim, warehouse.luchthavens_dim, warehouse.klanten_dim, warehouse.weer_dim CASCADE;
+
+-- Create table aircraft_dim (vliegtuig_dim)
+CREATE TABLE warehouse.vliegtuig_dim (
+    luchtvaartmaatschappij_code VARCHAR(4),
+    vliegtuig_code VARCHAR(12) PRIMARY KEY,
+    fabrikant VARCHAR(100),
+    vliegtuigtype_naam VARCHAR(100),
+    wakkerruimte_categorie CHAR(1),
+    vliegtuig_nood VARCHAR(50),
+    capaciteit INTEGER,
+    vrachtcapaciteit INTEGER,
+    bouwjaar INTEGER,
 );
 
--- Vliegtuigen
-CREATE TABLE Vliegtuigen (
-    "vliegtuigid" SERIAL PRIMARY KEY,
-    "maatschappijid" INT REFERENCES Maatschappijen("maatschappijid"),
-    "type" VARCHAR(50) NOT NULL,
-    "bouwjaar" INT
+-- Create table airlines_dim (luchtvaartmaatschappijen_dim)
+CREATE TABLE warehouse.luchtvaartmaatschappijen_dim (
+    luchtvaartmaatschappij_naam VARCHAR(100),
+    iata_code VARCHAR(3),
+    icao_code VARCHAR(4),
+    luchtvaartmaatschappij_id INTEGER PRIMARY KEY
 );
 
--- Planning
-CREATE TABLE Planning (
-    "planningid" SERIAL PRIMARY KEY,
-    "vluchtnummer" VARCHAR(10) NOT NULL,
-    "maatschappijid" INT REFERENCES Maatschappijen("maatschappijid"),
-    "bestemming" VARCHAR(3) NOT NULL,
-    "terminal" VARCHAR(5),
-    "gate" VARCHAR(5),
-    "tijd" TIMESTAMP
+-- Create table airports_dim (luchthavens_dim)
+CREATE TABLE warehouse.luchthavens_dim (
+    luchthaven_naam VARCHAR(100),
+    land VARCHAR(30),
+    stad VARCHAR(30),
+    iata_code VARCHAR(4),
+    icao_code VARCHAR(4),
+    breedtegraad DOUBLE PRECISION,
+    lengtegraad DOUBLE PRECISION,
+    hoogte INTEGER,
+    tijdzone VARCHAR(30),
+    dst CHAR(1),
+    luchthaven_id INTEGER PRIMARY KEY
 );
 
--- Vlucht
-CREATE TABLE Vlucht (
-    "vluchtid" SERIAL PRIMARY KEY,
-    "planningid" INT REFERENCES Planning("planningid"),
-    "vliegtuigid" INT REFERENCES Vliegtuigen("vliegtuigid"),
-    "datum" DATE
+-- Create table customer_dim (klanten_dim)
+CREATE TABLE warehouse.klanten_dim (
+    vlucht_id INTEGER,
+    operationele_tevredeheid DOUBLE PRECISION,
+    faciliteiten_tevredeheid DOUBLE PRECISION,
+    winkels_tevredeheid DOUBLE PRECISION,
+    klant_id INTEGER PRIMARY KEY
 );
 
--- Weer
-CREATE TABLE Weer (
-    "weerid" SERIAL PRIMARY KEY,
-    "datum" DATE,
-    "windrichting" DECIMAL(5,2),
-    "windsnelheid" DECIMAL(5,2),
-    "temperatuur" DECIMAL(5,2),
-    "neerslag" DECIMAL(5,2),
-    "luchtdruk" DECIMAL(5,2)
+-- Create table weather_dim (weer_dim)
+CREATE TABLE warehouse.weer_dim (
+    observatie_datum DATE,
+    wind_richting_graden INTEGER,
+    gemiddelde_uurlijkse_windsnelheid INTEGER,
+    gemiddelde_dagelijkse_windsnelheid INTEGER,
+    maximale_uurlijkse_windsnelheid INTEGER,
+    minimale_uurlijkse_windsnelheid INTEGER,
+    maximale_uurlijkse_windsnelheid_tijd INTEGER,
+    minimale_uurlijkse_windsnelheid_tijd INTEGER,
+    maximale_windsnelheid INTEGER,
+    minimale_windsnelheid INTEGER,
+    gemiddelde_temperatuur DOUBLE PRECISION,
+    maximale_temperatuur DOUBLE PRECISION,
+    minimale_temperatuur DOUBLE PRECISION,
+    maximale_temperatuur_tijd INTEGER,
+    minimale_temperatuur_tijd INTEGER,
+    zonneschijnduur_uren INTEGER,
+    zonneschijn_percentage INTEGER,
+    globale_straling INTEGER,
+    neerslagduur_uren INTEGER,
+    totale_neerslag INTEGER,
+    maximale_uurlijkse_neerslag INTEGER,
+    maximale_uurlijkse_neerslag_tijd INTEGER,
+    gemiddelde_luchtdruk INTEGER,
+    minimale_luchtdruk INTEGER,
+    maximale_luchtdruk INTEGER,
+    minimale_luchtdruk_tijd INTEGER,
+    maximale_luchtdruk_tijd INTEGER,
+    minimale_zichtbaarheid INTEGER,
+    maximale_zichtbaarheid INTEGER,
+    gemiddelde_zichtbaarheid INTEGER,
+    gemiddelde_bewolking INTEGER,
+    gemiddelde_relatieve_vochtigheid INTEGER,
+    maximale_relatieve_vochtigheid INTEGER,
+    minimale_relatieve_vochtigheid INTEGER,
+    minimale_relatieve_vochtigheid_tijd INTEGER,
+    maximale_relatieve_vochtigheid_tijd INTEGER,
+    potentiële_verdamping INTEGER,
+    weer_id INTEGER PRIMARY KEY
 );
 
--- Luchthavens
-CREATE TABLE Luchthavens (
-    "luchthavenid" SERIAL PRIMARY KEY,
-    "naam" VARCHAR(100) NOT NULL,
-    "iata" VARCHAR(3),
-    "icao" VARCHAR(4),
-    "land" VARCHAR(50),
-    "stad" VARCHAR(50),
-    "lat" DECIMAL(9,6),
-    "lon" DECIMAL(9,6),
-    "alt" INT,
-    "tz" VARCHAR(10),
-    "dst" CHAR(1),
-    "tzname" VARCHAR(50)
-);
-
--- Banen
-CREATE TABLE Banen (
-    "baanid" SERIAL PRIMARY KEY,
-    "luchthavenid" INT REFERENCES Luchthavens("luchthavenid"),
-    "nummer" VARCHAR(1) NOT NULL,
-    "code" VARCHAR(7),
-    "naam" VARCHAR(100),
-    "lengte" INT
-);
-
--- Aankomst
-CREATE TABLE Aankomst (
-    "aankomstid" SERIAL PRIMARY KEY,
-    "vluchtid" INT REFERENCES Vlucht("vluchtid"),
-    "baanid" INT REFERENCES Banen("baanid"),
-    "bezetting" INT,
-    "vracht" INT,
-    "aankomsttijd" TIMESTAMP
-);
-
--- Vertrek
-CREATE TABLE Vertrek (
-    "vertrekid" SERIAL PRIMARY KEY,
-    "vluchtid" INT REFERENCES Vlucht("vluchtid"),
-    "baanid" INT REFERENCES Banen("baanid"),
-    "bezetting" INT,
-    "vracht" INT,
-    "vertrektijd" TIMESTAMP
-);
-
--- Klant
-CREATE TABLE Klant (
-    "klantid" SERIAL PRIMARY KEY,
-    "vluchtid" INT REFERENCES Vlucht("vluchtid"),
-    "operatie" DECIMAL(5,2),
-    "faciliteiten" DECIMAL(5,2),
-    "shops" DECIMAL(5,2)
+-- Create table flights_fact (vluchten_feit)
+CREATE TABLE warehouse.vluchten_feit (
+    vluchtnummer VARCHAR(20),
+    luchtvaartmaatschappij_id VARCHAR(3),
+    bestemmingscode VARCHAR(4),
+    vliegtuig_id INTEGER,
+    bezetting INTEGER,
+    vrachtcapaciteit INTEGER,
+    aankomsttijd TIMESTAMP,
+    vertrektijd TIMESTAMP,
+    weer_id INTEGER,
+    bestemming_luchthaven_id INTEGER,
+    vlucht_id INTEGER PRIMARY KEY,
+    FOREIGN KEY (vliegtuig_id) REFERENCES warehouse.vliegtuig_dim (vliegtuig_id),
+    FOREIGN KEY (luchtvaartmaatschappij_id) REFERENCES warehouse.luchtvaartmaatschappijen_dim (luchtvaartmaatschappij_id),
+    FOREIGN KEY (bestemming_luchthaven_id) REFERENCES warehouse.luchthavens_dim (luchthaven_id),
+    FOREIGN KEY (vlucht_id) REFERENCES warehouse.klanten_dim (vlucht_id),
+    FOREIGN KEY (weer_id) REFERENCES warehouse.weer_dim (weer_id)
 );
