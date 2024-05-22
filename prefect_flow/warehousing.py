@@ -22,6 +22,7 @@ df_maatschappijen = pd.read_sql_table('maatschappijen', con=engine, schema='clea
 df_planning = pd.read_sql_table('planning', con=engine, schema='cleansed')
 df_vertrek = pd.read_sql_table('vertrek', con=engine, schema='cleansed')
 df_vliegtuig = pd.read_sql_table('vliegtuig', con=engine, schema='cleansed')
+df_vliegtuigtype = pd.read_sql_table('vliegtuigtype', con=engine, schema='cleansed')
 df_vlucht = pd.read_sql_table('vlucht', con=engine, schema='cleansed')
 df_weer = pd.read_sql_table('weer', con=engine, schema='cleansed')
 
@@ -30,12 +31,12 @@ def insert_vliegtuig_dim():
     df_vliegtuig_dim = pd.DataFrame({
         'luchtvaartmaatschappij_code': df_vliegtuig['airlinecode'],
         'vliegtuig_code': df_vliegtuig['vliegtuigcode'],
-        'fabrikant': df_vliegtuig['merk'],
-        'vliegtuigtype_naam': df_vliegtuig['type'],
-        'wakkerruimte_categorie': df_vliegtuig['wake'],
-        'vliegtuig_nood': df_vliegtuig['cat'],
-        'capaciteit': df_vliegtuig['capaciteit'],
-        'vrachtcapaciteit': df_vliegtuig['vracht']
+        'fabrikant': df_vliegtuigtype['merk'],
+        'vliegtuigtype_naam': df_vliegtuigtype['type'],
+        'wakkerruimte_categorie': df_vliegtuigtype['wake'],
+        'vliegtuig_nood': df_vliegtuigtype['cat'],
+        'capaciteit': df_vliegtuigtype['capaciteit'],
+        'vrachtcapaciteit': df_vliegtuigtype['vracht']
     })
     df_vliegtuig_dim.to_sql('vliegtuig_dim', con=engine, schema='warehouse', if_exists='append', index=False)
 

@@ -1,12 +1,13 @@
 -- Create schema
-CREATE SCHEMA warehouse;
+DROP SCHEMA IF EXISTS warehouse;
+CREATE SCHEMA IF NOT EXISTS warehouse;
 
 DROP TABLE IF EXISTS warehouse.vliegtuig_dim, warehouse.luchtvaartmaatschappijen_dim, warehouse.luchthavens_dim, warehouse.klanten_dim, warehouse.weer_dim CASCADE;
 
 -- Create table aircraft_dim (vliegtuig_dim)
 CREATE TABLE warehouse.vliegtuig_dim (
     luchtvaartmaatschappij_code VARCHAR(4),
-    vliegtuig_code VARCHAR(12) PRIMARY KEY,
+    vliegtuig_code VARCHAR(12),
     fabrikant VARCHAR(100),
     vliegtuigtype_naam VARCHAR(100),
     wakkerruimte_categorie CHAR(1),
@@ -14,6 +15,7 @@ CREATE TABLE warehouse.vliegtuig_dim (
     capaciteit INTEGER,
     vrachtcapaciteit INTEGER,
     bouwjaar INTEGER,
+    PRIMARY KEY (vliegtuig_code)
 );
 
 -- Create table airlines_dim (luchtvaartmaatschappijen_dim)
@@ -21,7 +23,8 @@ CREATE TABLE warehouse.luchtvaartmaatschappijen_dim (
     luchtvaartmaatschappij_naam VARCHAR(100),
     iata_code VARCHAR(3),
     icao_code VARCHAR(4),
-    luchtvaartmaatschappij_id INTEGER PRIMARY KEY
+    luchtvaartmaatschappij_id INTEGER AUTO_INCREMENT,
+    PRIMARY KEY (luchtvaartmaatschappij_id)
 );
 
 -- Create table airports_dim (luchthavens_dim)
