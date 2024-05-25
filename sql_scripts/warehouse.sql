@@ -52,7 +52,7 @@ CREATE TABLE warehouse.klanten_dim (
 
 -- Create table weather_dim (weer_dim)
 CREATE TABLE warehouse.weer_dim (
-    observatie_datum DATE,
+    observatie_datum DATE PRIMARY KEY,
     wind_richting_graden INTEGER,
     gemiddelde_uurlijkse_windsnelheid INTEGER,
     gemiddelde_dagelijkse_windsnelheid INTEGER,
@@ -89,25 +89,23 @@ CREATE TABLE warehouse.weer_dim (
     minimale_relatieve_vochtigheid_tijd INTEGER,
     maximale_relatieve_vochtigheid_tijd INTEGER,
     potentiele_verdamping INTEGER,
-    weer_id SERIAL PRIMARY KEY
+    weer_id SERIAL
 );
 
 -- Create table flights_fact (vluchten_feit)
 CREATE TABLE warehouse.vluchten_feit (
+    observatie_datum DATE,
     vluchtnummer VARCHAR(20),
     luchtvaartmaatschappij_code CHAR(3),
-    luchtvaartmaatschappij_id INTEGER,
+    luchtvaartmaatschappij_id SERIAL,
     bestemmingscode VARCHAR(4),
     vliegtuig_code VARCHAR(12),
     bezetting INTEGER,
     vrachtcapaciteit INTEGER,
     aankomsttijd TIMESTAMP,
     vertrektijd TIMESTAMP,
-    weer_id INTEGER,
-    bestemming_luchthaven_id INTEGER,
+    weer_id SERIAL,
     vlucht_id INTEGER PRIMARY KEY,
     FOREIGN KEY (vliegtuig_code) REFERENCES warehouse.vliegtuig_dim (vliegtuig_code),
-    FOREIGN KEY (luchtvaartmaatschappij_id) REFERENCES warehouse.luchtvaartmaatschappijen_dim (luchtvaartmaatschappij_id),
-    FOREIGN KEY (bestemming_luchthaven_id) REFERENCES warehouse.luchthavens_dim (luchthaven_id),
-    FOREIGN KEY (weer_id) REFERENCES warehouse.weer_dim (weer_id)
+    FOREIGN KEY (luchtvaartmaatschappij_id) REFERENCES warehouse.luchtvaartmaatschappijen_dim (luchtvaartmaatschappij_id)
 );

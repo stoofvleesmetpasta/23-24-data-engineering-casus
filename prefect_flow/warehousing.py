@@ -123,7 +123,9 @@ def insert_weer_dim():
 # Function to insert data into the 'vluchten_feit' table with batching
 def insert_vluchten_feit():
     df_vluchten_feit = pd.DataFrame({
+        'observatie_datum': df_vlucht['datum'],
         'vluchtnummer': df_vlucht['vluchtnr'],
+        'luchtvaartmaatschappij_code': df_vlucht['airlinecode'],
         'bestemmingscode': df_planning['destcode'],
         'vliegtuig_code': df_vliegtuig['vliegtuigcode'],
         'bezetting': df_vertrek['bezetting'],

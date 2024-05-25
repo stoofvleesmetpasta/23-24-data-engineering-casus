@@ -12,7 +12,7 @@ def upload_to_s3(directory, bucket_name):
     for filename in os.listdir(directory):
         if filename.endswith(".parquet"):
             file_path = os.path.join(directory, filename)
-            s3_key = f"{filename}/{filename}"
+            s3_key = f"parquet/{filename}/{filename}"
             try:
                 s3.upload_file(file_path, bucket_name, s3_key)
                 print(f"Successfully uploaded {filename} to s3://{bucket_name}/{s3_key}")
@@ -27,6 +27,3 @@ def upload():
     parquet_directory = "parquet"
     s3_bucket_name = "bucket-data-engeneering-project-nick"
     upload_to_s3(parquet_directory, s3_bucket_name)
-
-upload()
- 

@@ -1,0 +1,7 @@
+parquet
+parquet/klanten_dim.parquet
+parquet/luchthavens_dim.parquet
+parquet/luchtvaartmaatschappijen_dim.parquet
+parquet/vliegtuig_dim.parquet
+parquet/vluchten_feit.parquet
+parquet/weer_dim.parquet
