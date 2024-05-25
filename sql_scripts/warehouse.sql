@@ -1,12 +1,11 @@
 -- Create schema
-DROP SCHEMA IF EXISTS warehouse;
 CREATE SCHEMA IF NOT EXISTS warehouse;
 
-DROP TABLE IF EXISTS warehouse.vliegtuig_dim, warehouse.luchtvaartmaatschappijen_dim, warehouse.luchthavens_dim, warehouse.klanten_dim, warehouse.weer_dim CASCADE;
+DROP TABLE IF EXISTS warehouse.vliegtuig_dim, warehouse.luchtvaartmaatschappijen_dim, warehouse.luchthavens_dim, warehouse.klanten_dim, warehouse.weer_dim, warehouse.vluchten_feit CASCADE;
 
 -- Create table aircraft_dim (vliegtuig_dim)
 CREATE TABLE warehouse.vliegtuig_dim (
-    luchtvaartmaatschappij_code VARCHAR(4),
+    luchtvaartmaatschappij_code CHAR(3),
     vliegtuig_code VARCHAR(12),
     fabrikant VARCHAR(100),
     vliegtuigtype_naam VARCHAR(100),
@@ -23,15 +22,15 @@ CREATE TABLE warehouse.luchtvaartmaatschappijen_dim (
     luchtvaartmaatschappij_naam VARCHAR(100),
     iata_code VARCHAR(3),
     icao_code VARCHAR(4),
-    luchtvaartmaatschappij_id INTEGER AUTO_INCREMENT,
-    PRIMARY KEY (luchtvaartmaatschappij_id)
+    luchtvaartmaatschappij_code CHAR(3),
+    luchtvaartmaatschappij_id SERIAL PRIMARY KEY
 );
 
 -- Create table airports_dim (luchthavens_dim)
 CREATE TABLE warehouse.luchthavens_dim (
     luchthaven_naam VARCHAR(100),
-    land VARCHAR(30),
-    stad VARCHAR(30),
+    land VARCHAR(60),
+    stad VARCHAR(200),
     iata_code VARCHAR(4),
     icao_code VARCHAR(4),
     breedtegraad DOUBLE PRECISION,
@@ -39,7 +38,7 @@ CREATE TABLE warehouse.luchthavens_dim (
     hoogte INTEGER,
     tijdzone VARCHAR(30),
     dst CHAR(1),
-    luchthaven_id INTEGER PRIMARY KEY
+    luchthaven_id SERIAL PRIMARY KEY
 );
 
 -- Create table customer_dim (klanten_dim)
@@ -48,7 +47,7 @@ CREATE TABLE warehouse.klanten_dim (
     operationele_tevredeheid DOUBLE PRECISION,
     faciliteiten_tevredeheid DOUBLE PRECISION,
     winkels_tevredeheid DOUBLE PRECISION,
-    klant_id INTEGER PRIMARY KEY
+    klant_id SERIAL PRIMARY KEY
 );
 
 -- Create table weather_dim (weer_dim)
@@ -89,16 +88,17 @@ CREATE TABLE warehouse.weer_dim (
     minimale_relatieve_vochtigheid INTEGER,
     minimale_relatieve_vochtigheid_tijd INTEGER,
     maximale_relatieve_vochtigheid_tijd INTEGER,
-    potentiële_verdamping INTEGER,
-    weer_id INTEGER PRIMARY KEY
+    potentiele_verdamping INTEGER,
+    weer_id SERIAL PRIMARY KEY
 );
 
 -- Create table flights_fact (vluchten_feit)
 CREATE TABLE warehouse.vluchten_feit (
     vluchtnummer VARCHAR(20),
-    luchtvaartmaatschappij_id VARCHAR(3),
+    luchtvaartmaatschappij_code CHAR(3),
+    luchtvaartmaatschappij_id INTEGER,
     bestemmingscode VARCHAR(4),
-    vliegtuig_id INTEGER,
+    vliegtuig_code VARCHAR(12),
     bezetting INTEGER,
     vrachtcapaciteit INTEGER,
     aankomsttijd TIMESTAMP,
@@ -106,9 +106,8 @@ CREATE TABLE warehouse.vluchten_feit (
     weer_id INTEGER,
     bestemming_luchthaven_id INTEGER,
     vlucht_id INTEGER PRIMARY KEY,
-    FOREIGN KEY (vliegtuig_id) REFERENCES warehouse.vliegtuig_dim (vliegtuig_id),
+    FOREIGN KEY (vliegtuig_code) REFERENCES warehouse.vliegtuig_dim (vliegtuig_code),
     FOREIGN KEY (luchtvaartmaatschappij_id) REFERENCES warehouse.luchtvaartmaatschappijen_dim (luchtvaartmaatschappij_id),
     FOREIGN KEY (bestemming_luchthaven_id) REFERENCES warehouse.luchthavens_dim (luchthaven_id),
-    FOREIGN KEY (vlucht_id) REFERENCES warehouse.klanten_dim (vlucht_id),
     FOREIGN KEY (weer_id) REFERENCES warehouse.weer_dim (weer_id)
 );

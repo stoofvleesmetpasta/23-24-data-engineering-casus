@@ -26,7 +26,7 @@ df_vliegtuigtype = pd.read_sql_table('vliegtuigtype', con=engine, schema='cleans
 df_vlucht = pd.read_sql_table('vlucht', con=engine, schema='cleansed')
 df_weer = pd.read_sql_table('weer', con=engine, schema='cleansed')
 
-# Function to insert data into the 'vliegtuig_dim' table
+# Function to insert data into the 'vliegtuig_dim' table with batching
 def insert_vliegtuig_dim():
     df_vliegtuig_dim = pd.DataFrame({
         'luchtvaartmaatschappij_code': df_vliegtuig['airlinecode'],
@@ -36,20 +36,22 @@ def insert_vliegtuig_dim():
         'wakkerruimte_categorie': df_vliegtuigtype['wake'],
         'vliegtuig_nood': df_vliegtuigtype['cat'],
         'capaciteit': df_vliegtuigtype['capaciteit'],
-        'vrachtcapaciteit': df_vliegtuigtype['vracht']
+        'vrachtcapaciteit': df_vliegtuigtype['vracht'],
+        'bouwjaar': df_vliegtuig['bouwjaar']
     })
-    df_vliegtuig_dim.to_sql('vliegtuig_dim', con=engine, schema='warehouse', if_exists='append', index=False)
+    df_vliegtuig_dim.to_sql('vliegtuig_dim', con=engine, schema='warehouse', if_exists='append', index=False, chunksize=1)
 
-# Function to insert data into the 'luchtvaartmaatschappijen_dim' table
+# Function to insert data into the 'luchtvaartmaatschappijen_dim' table with batching
 def insert_luchtvaartmaatschappijen_dim():
     df_luchtvaartmaatschappijen_dim = pd.DataFrame({
         'luchtvaartmaatschappij_naam': df_maatschappijen['name'],
         'iata_code': df_maatschappijen['iata'],
-        'icao_code': df_maatschappijen['icao']
+        'icao_code': df_maatschappijen['icao'],
+        'luchtvaartmaatschappij_code': df_vlucht['airlinecode']
     })
-    df_luchtvaartmaatschappijen_dim.to_sql('luchtvaartmaatschappijen_dim', con=engine, schema='warehouse', if_exists='append', index=False, method='multi')
+    df_luchtvaartmaatschappijen_dim.to_sql('luchtvaartmaatschappijen_dim', con=engine, schema='warehouse', if_exists='append', index=False, method='multi', chunksize=1000)
 
-# Function to insert data into the 'luchthavens_dim' table
+# Function to insert data into the 'luchthavens_dim' table with batching
 def insert_luchthavens_dim():
     df_luchthavens_dim = pd.DataFrame({
         'luchthaven_naam': df_luchthavens['airport'],
@@ -63,9 +65,9 @@ def insert_luchthavens_dim():
         'tijdzone': df_luchthavens['tz'],
         'dst': df_luchthavens['dst']
     })
-    df_luchthavens_dim.to_sql('luchthavens_dim', con=engine, schema='warehouse', if_exists='append', index=False, method='multi')
+    df_luchthavens_dim.to_sql('luchthavens_dim', con=engine, schema='warehouse', if_exists='append', index=False, method='multi', chunksize=10)
 
-# Function to insert data into the 'klanten_dim' table
+# Function to insert data into the 'klanten_dim' table with batching
 def insert_klanten_dim():
     df_klanten_dim = pd.DataFrame({
         'vlucht_id': df_klant['vluchtid'],
@@ -73,9 +75,9 @@ def insert_klanten_dim():
         'faciliteiten_tevredeheid': df_klant['faciliteiten'],
         'winkels_tevredeheid': df_klant['shops']
     })
-    df_klanten_dim.to_sql('klanten_dim', con=engine, schema='warehouse', if_exists='append', index=False, method='multi')
+    df_klanten_dim.to_sql('klanten_dim', con=engine, schema='warehouse', if_exists='append', index=False, method='multi', chunksize=1)
 
-# Function to insert data into the 'weer_dim' table
+# Function to insert data into the 'weer_dim' table with batching
 def insert_weer_dim():
     df_weer_dim = pd.DataFrame({
         'observatie_datum': df_weer['datum'],
@@ -114,31 +116,58 @@ def insert_weer_dim():
         'minimale_relatieve_vochtigheid': df_weer['uxh'],
         'minimale_relatieve_vochtigheid_tijd': df_weer['un'],
         'maximale_relatieve_vochtigheid_tijd': df_weer['unh'],
-        'potentiële_verdamping': df_weer['ev2']
+        'potentiele_verdamping': df_weer['ev2']
     })
-    df_weer_dim.to_sql('weer_dim', con=engine, schema='warehouse', if_exists='append', index=False, method='multi')
+    df_weer_dim.to_sql('weer_dim', con=engine, schema='warehouse', if_exists='append', index=False, method='multi', chunksize=1)
 
-# Function to insert data into the 'vluchten_feit' table
+# Function to insert data into the 'vluchten_feit' table with batching
 def insert_vluchten_feit():
     df_vluchten_feit = pd.DataFrame({
         'vluchtnummer': df_vlucht['vluchtnr'],
-        'luchtvaartmaatschappij_id': df_vlucht['luchtvaartmaatschappij_id'],  # Assuming this is already in the dataframe
         'bestemmingscode': df_planning['destcode'],
-        'vliegtuig_id': df_vlucht['vluchtid'],
+        'vliegtuig_code': df_vliegtuig['vliegtuigcode'],
         'bezetting': df_vertrek['bezetting'],
         'vrachtcapaciteit': df_vertrek['vracht'],
         'aankomsttijd': df_aankomst['aankomsttijd'],
         'vertrektijd': df_vertrek['vertrektijd'],
-        'weer_id': df_vlucht['weer_id'],  # Assuming this is already in the dataframe
-        'bestemming_luchthaven_id': df_vlucht['bestemming_luchthaven_id'],  # Assuming this is already in the dataframe
         'vlucht_id': df_vlucht['vluchtid']
     })
-    df_vluchten_feit.to_sql('vluchten_feit', con=engine, schema='warehouse', if_exists='append', index=False, method='multi')
+    df_vluchten_feit.to_sql('vluchten_feit', con=engine, schema='warehouse', if_exists='append', index=False, method='multi', chunksize=10)
 
-# Insert data into the respective tables
-insert_vliegtuig_dim()
-insert_luchtvaartmaatschappijen_dim()
-insert_luchthavens_dim()
-insert_klanten_dim()
-insert_weer_dim()
-insert_vluchten_feit()
+# Define Prefect tasks
+@task
+def run_insert_vliegtuig_dim():
+    insert_vliegtuig_dim()
+
+@task
+def run_insert_luchtvaartmaatschappijen_dim():
+    insert_luchtvaartmaatschappijen_dim()
+
+@task
+def run_insert_luchthavens_dim():
+    insert_luchthavens_dim()
+
+@task
+def run_insert_klanten_dim():
+    insert_klanten_dim()
+
+@task
+def run_insert_weer_dim():
+    insert_weer_dim()
+
+@task
+def run_insert_vluchten_feit():
+    insert_vluchten_feit()
+
+# Define the Prefect flow
+@flow
+def run_all_inserts():
+    run_insert_vliegtuig_dim()
+    run_insert_luchtvaartmaatschappijen_dim()
+    run_insert_luchthavens_dim()
+    run_insert_klanten_dim()
+    run_insert_weer_dim()
+    run_insert_vluchten_feit()
+
+# Execute the flow
+
