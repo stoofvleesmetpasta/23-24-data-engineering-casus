@@ -4,6 +4,7 @@ from import_raw import import_raw
 from data_cleaning import data_cleaning
 from warehousing import run_all_inserts
 from to_parquet import to_parquet
+from upload_to_s3 import upload
 
 @flow
 def run():
@@ -12,5 +13,7 @@ def run():
     cleaning_flow = data_cleaning()
     warehousing_flow = run_all_inserts()
     parquet_flow = to_parquet()
+    upload_to_bucket_flow = upload()
+    
 if __name__ == '__main__':
     run()
