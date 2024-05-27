@@ -5,3 +5,4 @@ parquet/luchtvaartmaatschappijen_dim.parquet
 parquet/vliegtuig_dim.parquet
 parquet/vluchten_feit.parquet
 parquet/weer_dim.parquet
+kaggle.json
